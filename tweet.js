@@ -1,0 +1,287 @@
+
+// DICTIONARY
+var nouns = ["egg", "potion", "chai latte", "chunk", "bargain", "tadpole", "fuck up", "work of art", "napkin", "motif", "milkshake", "belly", "champagne", "whale", "shark", "whale shark", "healthy soil", "dirt", "queen", "rope", "squash", "hawk", "ear", "origami", "frog", "mood ring", "scooter", "nametag", "succulent", "Flamin' Hot Cheetos", "paystub", "funfetti cake", "lil soy bean jar", "pink eye", "grande vanilla latte", "joy con", "subway", "spongebob screenshot", "beautiful hair", "groovy lunch hour", "trip to hawaii!", "noosa", "berry", "mouthful of spiders", "old haunted guitar covered in blood that jesus found by the dumpster, ALLEGEDLY"]
+var properNouns = ["uncle sam", "garnet", "the perf @girlfoyle", "will", "izzy", "bart the chameleon", "jack eichel", "bernie", "elizabeth warren", "the original rascal", "human girl @andrea_oaks", "greninja", "donkey kong", "diddy kong", "kirby", "mr funk", "my ex", "whale prom", "pokemon", "human @asst_to_hutch", "human @dnmckn", "my roommate", "fart", "inkling", "Doctor Who", "class traitor", "CAPTAIN MAGMA", "isabelle", "andrea's favorite plant", "bulbasaur", "hutch", "zoey the dog", "andrea", "dooski", "king nightmare spiderlord", "hillary", "mudkip"]
+var verbsIng = ["putting all my amiibo in the washing machine", "fucking up", "invading iraq", "literally just vibing", "fumbling for words", "grasping at straws", "punishing strangers for their transgressions", "calling tom hanks to ask an important question", "figuring out a way to ask me out :)", "giving the waitress tips", "swinging their hips", "doing a moby dick speedrun", "becoming a the real cool cat lately", "breaking up with me", "trying to prove a point", "really going to die on this hill, huh", "eating a burrito shaped like me (by design)"]
+var verbsS = ["pees", "poops", "farts", "dabs", "sneezes", "yeets", "vibes", "wheels and deals", "shits", "stumbles", "tweets", "burns", "stabs", "celebrates", "kisses", "dances", "yearns", "hugs", "embraces"]
+var verbsEd = ["kissed", "dabbed", "exploded", "fell in love", "vibed", "ate loudly", "kissed"]
+var adverbs = ["violently", "lovingly", "delightfully", "loudly", "bulbasaurly", "menacingly", "polietly", "drunkenly", "randomly", "shittily", "globally", "goofily", "longingly", "desperately"]
+var places = ["in Kirby's Dreamland", "under a dumpster", "on Amtrak", "on SEPTA", "on the LIRR", "in the Long Island Sound", "in heaven", "in the Deep Sea Metro", "in the belly of a whale, like jonah", "in woody from toy story's boot", "on Red Couch", "during a Philadelphia sports riot", "inside a secret", "at the peach mag reading", "at the Clam Bake", "at the airport", "at baggage claim", "where we met", "where we joined body and soul together", "in Hawaii!", "in peach mag headquarters"]
+
+// picks tweet type
+// TYPES are:
+// 0: dont text (10%)
+// 1: *does something* (10%)
+// 2: as a treat (10%)
+// 3: its about (10%)
+// 4: trans rights (10%)
+// 5: and i oop (10%)
+// 6: shipping (10%)
+// 7, 8: All blank knows is (20%) 
+// 9: haha just kidding unless (10%)
+
+var t = Math.floor(Math.random() * 10);
+console.log(t)
+console.log(" ")
+console.log("nouns length= " + nouns.length)
+console.log("properNouns length= " + properNouns.length)
+console.log("verbsIng length= " + verbsIng.length)
+console.log("verbsS length= " + verbsS.length)
+console.log("verbsEd length= " + verbsEd.length)
+console.log("adverbs length= " + adverbs.length)
+console.log("places length= " + places.length)
+console.log(" ")
+// tweets
+t = 3
+// DONT TEXT function: 10% chance
+if (t === 0) {
+  var y = Math.floor(Math.random() * properNouns.length);
+  var properNoun = properNouns[y];
+  var z = Math.floor(Math.random() * verbsIng.length);
+  var verbIng = verbsIng[z];
+  let tweet = properNoun + " is " + verbIng + ", dont text";
+  var Twit = require('twit');
+
+  var T = new Twit({
+    consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+    consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+    access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+    access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+  })
+
+  T.post('statuses/update', {
+    status: tweet
+  })
+
+  console.log(tweet)
+}
+
+// DOES SOMETHING function: 10% chance
+if (t === 1) {
+  var x = Math.floor(Math.random() * adverbs.length);
+  var adverb = adverbs[x];
+  var y = Math.floor(Math.random() * verbsS.length);
+  var verboS = verbsS[y];
+  var z = Math.floor(Math.random() * places.length);
+  var place = places[z];
+  let tweet = "*" + adverb + " " + verboS + " " + place + "*";
+  var Twit = require('twit');
+
+  var T = new Twit({
+    consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+    consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+    access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+    access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+  })
+
+  T.post('statuses/update', {
+    status: tweet
+  })
+
+  console.log(tweet)
+}
+
+// AS A TREAT function: 10% chance
+if (t === 2) {
+  var y = Math.floor(Math.random() * nouns.length);
+  var noun = nouns[y];
+  var z = Math.floor(Math.random() * properNouns.length);
+  var properNoun = properNouns[z];
+  let tweet = properNoun + " can have little a " + noun + ", as a treat";
+  var Twit = require('twit');
+
+  var T = new Twit({
+    consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+    consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+    access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+    access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+  })
+
+  T.post('statuses/update', {
+    status: tweet
+  })
+
+  console.log(tweet)
+}
+
+// ITS ABOUT function: 10% chance
+if (t === 3) {
+  var about = Math.floor(Math.random() * 2);
+  //noun
+  if (about === 0) {
+    var y = Math.floor(Math.random() * nouns.length);
+    var noun = nouns[y];
+    let tweet = "its about the " + noun + ", send tweet";
+    var Twit = require('twit');
+
+    var T = new Twit({
+      consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+      consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+      access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+      access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+    })
+
+    T.post('statuses/update', {
+      status: tweet
+    })
+
+    console.log(tweet)
+  }
+  //properNoun
+  if (about === 1) {
+    var y = Math.floor(Math.random() * properNouns.length);
+    var properNoun = properNouns[y];
+    let tweet = "its about " + properNoun + ", send tweet";
+    var Twit = require('twit');
+
+    var T = new Twit({
+      consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+      consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+      access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+      access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+    })
+
+    T.post('statuses/update', {
+      status: tweet
+    })
+
+    console.log(tweet)
+  }
+  //verbsIng
+  if (about === 2) {
+    var y = Math.floor(Math.random() * verbsIng.length);
+    var verbIng = verbsIng[y];
+    let tweet = "its about " + verbIng + ", send tweet";
+    var Twit = require('twit');
+
+    var T = new Twit({
+      consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+      consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+      access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+      access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+    })
+
+    T.post('statuses/update', {
+      status: tweet
+    })
+
+    console.log(tweet)
+  }
+}
+
+// TRANS RIGHTS function: 10% chance
+if (t === 4) {
+  var y = Math.floor(Math.random() * properNouns.length);
+  var properNoun = properNouns[y];
+  let tweet = properNoun + " said trans rights";
+  var Twit = require('twit');
+
+  var T = new Twit({
+    consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+    consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+    access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+    access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+  })
+
+  T.post('statuses/update', {
+    status: tweet
+  })
+
+  console.log(tweet)
+}
+
+// AND I OOP function: 10% chance
+if (t === 5) {
+  var x = Math.floor(Math.random() * nouns.length);
+  var noun = nouns[x];
+  var y = Math.floor(Math.random() * properNouns.length);
+  var properNoun = properNouns[y];
+  var z = Math.floor(Math.random() * verbsIng.length);
+  var verbIng = verbsIng[z];
+  let tweet = "sometimes, my " + noun + " forgets how " + verbIng + " is offensive to " + properNoun + " /: and i oop";
+  var Twit = require('twit');
+
+  var T = new Twit({
+    consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+    consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+    access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+    access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+  })
+
+  T.post('statuses/update', {
+    status: tweet
+  })
+
+  console.log(tweet)
+}
+
+// SHIPPING function: 10% chance
+if (t === 6) {
+  var y = Math.floor(Math.random() * properNouns.length);
+  var properNoun1 = properNouns[y];
+  var z = Math.floor(Math.random() * properNouns.length);
+  var properNoun2 = properNouns[z];
+  let tweet = "i ship " + properNoun1 + " and " + properNoun2 + ".";
+  var Twit = require('twit');
+
+  var T = new Twit({
+    consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+    consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+    access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+    access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+  })
+
+  T.post('statuses/update', {
+    status: tweet
+  })
+
+  console.log(tweet)
+}
+
+// ALL NOUN KNOWS IS function: 20% chance
+if (t === 7 || t === 8) {
+  var x = Math.floor(Math.random() * nouns.length);
+  var noun = nouns[x];
+  var y = Math.floor(Math.random() * properNouns.length);
+  var properNoun = properNouns[y];
+  var z = Math.floor(Math.random() * verbsIng.length);
+  var verbIng = verbsIng[z];
+  let tweet = "all " + properNoun + " knows is " + noun + " and " + verbIng + ".";
+  var Twit = require('twit');
+
+  var T = new Twit({
+    consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+    consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+    access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+    access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+  })
+
+  T.post('statuses/update', {
+    status: tweet
+  })
+
+  console.log(tweet)
+}
+
+// WHAT IF WE function: 10% chance
+if (t === 9) {
+  var x = Math.floor(Math.random() * verbsEd.length);
+  var verbEd = verbsEd[x];
+  var y = Math.floor(Math.random() * places.length);
+  var place = places[y];
+  let tweet = "what if we " + verbEd + " " + place + "? haha just kidding............ unless?";
+  var Twit = require('twit');
+
+  var T = new Twit({
+    consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
+    consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
+    access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
+    access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
+  })
+
+  T.post('statuses/update', {
+    status: tweet
+  })
+
+  console.log(tweet)
+}
