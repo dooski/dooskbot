@@ -116,7 +116,7 @@ button[disabled] {
   padding-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
-  padding-bottom: 90px;
+  padding-bottom: 50px;
   font-size: 1rem;
   font-family: bahnschrift, helvetica;
   text-align: center;
@@ -137,11 +137,12 @@ button[disabled] {
 
   #password {
     font-size: 0.8rem;
+    padding-bottom: 90px;
   }
 }
 
 @media (max-width: 500px) {
   .btn {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 }
