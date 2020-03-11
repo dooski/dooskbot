@@ -106,6 +106,12 @@ button[disabled] {
   float: right;
 }
 
+.version {
+  color: black;
+  font-size: .7rem;
+  text-align: center;
+}
+
 #password {
   -webkit-appearance: none;
   -moz-appearance: none;
