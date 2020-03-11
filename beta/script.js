@@ -35,7 +35,8 @@ function generateTweet(tweet) {
   // 4: trans rights (10%)
   // 5: and i oop (10%)
   // 6: shipping (10%)
-  // 7, 8: All blank knows is (20%) 
+  // 7: All blank knows is (10%)
+  // 8: town 
   // 9: haha just kidding unless (10%)
 
   var t = Math.floor(Math.random() * 10);
@@ -59,7 +60,7 @@ function generateTweet(tweet) {
     var verbIng = verbsIng[z];
     let tweet = properNoun + " is " + verbIng + ", dont text";
 
-    console.log(tweet)
+    console.log(tweet);
     return tweet;
   }
 
@@ -73,7 +74,7 @@ function generateTweet(tweet) {
     var place = places[z];
     let tweet = "*" + adverb + " " + verboS + " " + place + "*";
 
-    console.log(tweet)
+    console.log(tweet);
     return tweet;
   }
 
@@ -85,7 +86,7 @@ function generateTweet(tweet) {
     var properNoun = properNouns[z];
     let tweet = properNoun + " can have little a " + noun + ", as a treat";
 
-    console.log(tweet)
+    console.log(tweet);
     return tweet;
   }
 
@@ -98,7 +99,7 @@ function generateTweet(tweet) {
       var noun = nouns[y];
       let tweet = "its about the " + noun + ", send tweet";
 
-      console.log(tweet)
+      console.log(tweet);
       return tweet;
     }
     //properNoun
@@ -107,7 +108,7 @@ function generateTweet(tweet) {
       var properNoun = properNouns[y];
       let tweet = "its about " + properNoun + ", send tweet";
 
-      console.log(tweet)
+      console.log(tweet);
       return tweet;
     }
     //verbsIng
@@ -116,7 +117,7 @@ function generateTweet(tweet) {
       var verbIng = verbsIng[y];
       let tweet = "its about " + verbIng + ", send tweet";
 
-      console.log(tweet)
+      console.log(tweet);
       return tweet;
     }
   }
@@ -127,7 +128,7 @@ function generateTweet(tweet) {
     var properNoun = properNouns[y];
     let tweet = properNoun + " said trans rights";
 
-    console.log(tweet)
+    console.log(tweet);
     return tweet;
   }
 
@@ -141,7 +142,7 @@ function generateTweet(tweet) {
     var verbIng = verbsIng[z];
     let tweet = "sometimes, my " + noun + " forgets how " + verbIng + " is offensive to " + properNoun + " /: and i oop";
 
-    console.log(tweet)
+    console.log(tweet);
     return tweet;
   }
 
@@ -153,11 +154,11 @@ function generateTweet(tweet) {
     var properNoun2 = properNouns[z];
     let tweet = "i ship " + properNoun1 + " and " + properNoun2 + ".";
 
-    console.log(tweet)
+    console.log(tweet);
     return tweet;
   }
 
-  // ALL NOUN KNOWS IS function: 20% chance
+  // ALL NOUN KNOWS IS function: 0% chance
   if (t === 7) {
     var x = Math.floor(Math.random() * nouns.length);
     var noun = nouns[x];
@@ -167,7 +168,7 @@ function generateTweet(tweet) {
     var verbIng = verbsIng[z];
     let tweet = "all " + properNoun + " knows is " + noun + " and " + verbIng + ".";
 
-    console.log(tweet)
+    console.log(tweet);
     return tweet;
   }
 
@@ -179,7 +180,7 @@ function generateTweet(tweet) {
     var adjective = adjectives[y];
     let tweet = noun + "? in my " + adjective + " town? it's more likely than you think";
 
-    console.log(tweet)
+    console.log(tweet);
     return tweet;
   }
 
@@ -191,7 +192,7 @@ function generateTweet(tweet) {
     var place = places[y];
     let tweet = "what if we " + verbEd + " " + place + "? haha just kidding............ unless?";
 
-    console.log(tweet)
+    console.log(tweet);
     return tweet;
   }
 }
