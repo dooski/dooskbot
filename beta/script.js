@@ -178,7 +178,7 @@ function generateTweet(tweet) {
     var noun = nouns[x];
     var y = Math.floor(Math.random() * adjectives.length);
     var adjective = adjectives[y];
-    let tweet = noun + "? in my " + adjective + " town? it's more likely than you think";
+    let tweet = noun + "? in my " + adjective + " town???";
 
     console.log(tweet);
     return tweet;
