@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "one": "node one.js",
     "bigf": "node bigf.js",
     "stop": "node stop.js",
     "tweet": "node tweet.js",
