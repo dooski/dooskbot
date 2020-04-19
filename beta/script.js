@@ -19,15 +19,15 @@ function generateTweet(tweet) {
 
   // DICTIONARY: nouns are singular common nouns; properNouns are singular proper nouns; verbsIng are gerund phrases
   // verbsEd are past tense verbs; adverbs are adverbs ending in -ly; places are prepositional phrases mostly giving location
-  var nouns = ["mystery", "sushi dinner", "friend", "manatee", "maple", "sky", "blood", "tote", "egg", "potion", "chai latte", "chunk", "hot sauce", "medium double double", "boot", "plastic bag", "captain falcon's nair", "single-use cutlery", "slapper", "magnet", "telephone", "girl scout cookie", "dime", "fake out", "fuckin' fake out", "chicken nugget", "bargain", "tadpole", "fuck up", "work of art", "napkin", "motif", "milkshake", "belly", "champagne", "whale", "shark", "whale shark", "healthy soil", "dirt", "queen", "rope", "hawk", "ear", "origami", "frog", "mood ring", "scooter", "nametag", "succulent", "Flamin' Hot Cheetos", "paystub", "funfetti cake", "lil soy bean", "pink eye", "grande vanilla latte", "joy con", "subway", "spongebob screenshot", "beautiful hair", "groovy lunch hour", "noosa", "berry", "mouthful of spiders", "old haunted guitar covered in blood that jesus found by the dumpster, ALLEGEDLY"]
-  var properNouns = ["me", "shiny wooloo", "barack obama", "magic johnson", "Fargo, on FX returning April 20,", "meryl streep", "Splatoon 2 for the Nintendo Switch", "chelsea", "calamity ganon", "kate winslet", "greta gerwig", "brie larson", "keri russell", "HBO", "dumb dead idiot john mccain", "momo", "celeste", "helen", "pashmina", "yoshi", "kk slider", "santa claus herself", "doctor kran", "ridley", "ronan farrow", "pedro martinez", "pawniard", "hawlucha", "dunsparce", "chili", "chai", "canuck", "uncle sam", "garnet", "the perf @girlfoyle", "daymor", "avy", "big sean", "bo horvat", "tina fey", "will", "izzy", "bart the chameleon", "jack eichel", "bernie", "elizabeth warren", "the original rascal", "human girl @andrea_oaks", "greninja", "donkey kong", "diddy kong", "kirby", "mr funk", "my ex", "whale prom", "pokemon", "human @asst_to_hutch", "human @dnmckn", "my roommate", "fart", "inkling", "Doctor Who", "class traitor", "CAPTAIN MAGMA", "isabelle", "andrea's favorite plant", "bulbasaur", "hutch", "zoey the dog", "andrea", "dooski", "king nightmare spiderlord", "hillary", "mudkip"]
-  var verbsIng = ["rigging a primary", "doing a little dance on the catwalk", "throwing out my important tax files", "turning back", "squeezing the last bit of toothpaste out", "ordering pizza", "ordering systemic change in our social order", "spreading COVID-19 on purpose", "straight flexing", "exploring the entire world", "sprinting from a bad dream", "rolling down a hill", "falling right out of the sky", "dropping the load", "putting all my amiibo in the washing machine", "fucking up", "invading iraq", "literally just vibing", "fumbling for words", "spinning around and around", "scheming on the low", "jumping", "showering in pig's blood like that one scene in episode three season one of the FX series, Fargo, returns April 20 #sponsored", "birding", "grasping at straws", "punishing strangers for their transgressions", "calling tom hanks to ask an important question", "figuring out a way to ask me out :)", "giving the waitress tips", "swinging their hips", "doing a moby dick speedrun", "becoming the real cool cat lately", "breaking up with me", "trying to prove a point", "really going to die on this hill, huh", "eating a burrito shaped like me (by design)"]
+  var nouns = ["mystery", "love", "graham cracker", "sushi dinner", "friend", "pudding on a ritz (like the cracker lmao)", "manatee", "maple", "sky", "blood", "tote", "egg", "potion", "chai latte", "chunk", "hot sauce", "medium double double", "boot", "plastic bag", "wealth equality", "captain falcon's nair", "single-use cutlery", "slapper", "magnet", "telephone", "girl scout cookie", "dime", "fake out", "fuckin' fake out", "chicken nugget", "bargain", "tadpole", "fuck up", "work of art", "napkin", "motif", "milkshake", "belly", "champagne", "whale", "shark", "whale shark", "healthy soil", "dirt", "queen", "rope", "hawk", "ear", "origami", "frog", "mood ring", "scooter", "nametag", "succulent", "Flamin' Hot Cheetos", "paystub", "funfetti cake", "lil soy bean", "pink eye", "grande vanilla latte", "joy con", "subway", "spongebob screenshot", "beautiful hair", "groovy lunch hour", "noosa", "berry", "mouthful of spiders", "old haunted guitar covered in blood that jesus found by the dumpster, ALLEGEDLY"]
+  var properNouns = ["me", "justin true doe", "mighty sapling warrior", "shiny wooloo", "tom nook", "warlord acorn", "all the good folks at @FinjiCo", "barack obama", "magic johnson", "dominic the donkey", "italian christmas donkey", "Fargo, on FX returning April 20,", "meryl streep", "Splatoon 2 for the Nintendo Switch", "animal crossing", "chelsea", "calamity ganon", "kate winslet", "greta gerwig", "brie larson", "keri russell", "HBO", "dumb dead idiot john mccain", "momo", "celeste", "helen", "pashmina", "Andre 3000", "yoshi", "kk slider", "santa claus herself", "doctor kran", "ridley", "the alien from alien", "non canonical jar jar binks", "ronan farrow", "pedro martinez", "pawniard", "hawlucha", "dunsparce", "chili", "chai", "canuck", "uncle sam", "garnet", "the perf @girlfoyle", "daymor", "avy", "big sean", "bo horvat", "tina fey", "will", "izzy", "bart the chameleon", "jack eichel", "bernie", "elizabeth warren", "the original rascal", "human girl @andrea_oaks", "greninja", "donkey kong", "diddy kong", "kirby", "mr funk", "my ex", "whale prom", "pokemon", "human @asst_to_hutch", "human @dnmckn", "my roommate", "fart", "inkling", "Doctor Who", "class traitor", "CAPTAIN MAGMA", "isabelle", "andrea's favorite plant", "bulbasaur", "hutch", "zoey the dog", "andrea", "dooski", "king nightmare spiderlord", "hillary", "mudkip"]
+  var verbsIng = ["rigging a primary", "putting on the ritz", "sealing jeff bezos away for eternity", "doing a little dance on the catwalk", "throwing out my important tax files", "turning back", "squeezing the last bit of toothpaste out", "ordering pizza", "ordering systemic change in our social order", "spreading COVID-19 on purpose", "straight flexing", "exploring the entire world", "sprinting from a bad dream", "rolling down a hill", "falling right out of the sky", "dropping the load", "putting all my amiibo in the washing machine", "fucking up", "invading iraq", "literally just vibing", "fumbling for words", "spinning around and around", "scheming on the low", "jumping", "showering in pig's blood like that one scene in episode three season one of the FX series, Fargo, returns April 20 #sponsored", "birding", "grasping at straws", "punishing strangers for their transgressions", "calling tom hanks to ask an important question", "figuring out a way to ask me out :)", "giving the waitress tips", "swinging their hips", "doing a moby dick speedrun", "becoming the real cool cat lately", "breaking up with me", "trying to prove a point", "really going to die on this hill, huh", "eating a burrito shaped like me (by design)"]
   var verbsS = ["darkens", "pees", "backflips", "poops", "farts", "dabs", "sneezes", "yeets", "laughs", "vibes", "flexes", "wheels and deals", "shits", "stumbles", "tweets", "burns", "stabs", "celebrates", "smacks", "bangs", "slaps", "kisses", "dances", "yearns", "hugs", "embraces"]
-  var verbsEd = ["kissed", "smoked", "lost", "dabbed", "drove", "fell in love", "vibed", "chuckled", "ate loudly", "flexed", "kissed", "traded", "battled", "transformed!", "performed", "screamed", "drank", "wiggled", "snuggled", "came undone", "fused", "fuckin' GAMED"]
+  var verbsEd = ["kissed", "smoked", "lost", "dabbed", "drove", "fell in love", "splatted", "vibed", "chuckled", "ate loudly", "flexed", "kissed", "traded", "battled", "transformed!", "performed", "screamed", "drank", "wiggled", "snuggled", "came undone", "fused", "fuckin' GAMED"]
   var adverbs = ["violently", "gorgeously", "lovingly", "delightfully", "hastily", "loudly", "barely", "nautically", "bulbasaurly", "menacingly", "rudely", "polietly", "drunkenly", "randomly", "literally", "shittily", "gently", "goofily", "longingly", "desperately"]
-  var adjectives = ["mean", "super", "cool", "good", "dope as hell", "nautical", "nude", "fresh to death", "fresh", "inky", "stinky", "wet", "spicy", "blue", "jazzy"]
-  var places = ["in Kirby's Dreamland", "in the dooskbot server, bayBEE", "in line at Federal Donuts", "under a dumpster", "on Amtrak", "on SEPTA", "on the LIRR", "at work", "at Mighty Taco", "at the Phoebe Bridger's concert", "by the docks", "near one of those classic active shootouts", "at the chili's", "in the applebee's bathroom", "on foreign land", "in the Long Island Sound", "in heaven", "in the Deep Sea Metro", "in the belly of a whale, like jonah", "in woody from toy story's boot", "on Red Couch", "during a Philadelphia sports riot", "inside a secret", "at the peach mag reading", "at the Clam Bake", "at the airport", "at baggage claim", "where we met", "where we joined body and soul together", "in Hawaii!", "in peach mag headquarters"]
-  var events = ["cause the COVID-19 pandemic", "the worm", "the ice bucket challenge", "9/11", "the sinking of the lusitania", "Y2K", "the miracle on ice", "the chicago fire", "the space landing", "the destruction of hyrule", "the JFK assassination", "pull off the best birthday surprise party ever!", "this", "all of vietnam", "start the titular fire in Billy Joel's classic We Didn't Start the Fire",]
+  var adjectives = ["mean", "super", "cool", "asinine", "good", "dope as hell", "nautical", "nude", "fresh to death", "fresh", "inky", "stinky", "wet", "spicy", "blue", "jazzy", "stanky", ""]
+  var places = ["in Kirby's Dreamland", "in the middle of charging up a booyah bomb", "in the Vatican", "in quebec", "inside the milk fridge at wegmans", "in the lancelot parking lot of dulac", "in the dooskbot server, bayBEE", "in line at Federal Donuts", "under a dumpster", "on Amtrak", "on SEPTA", "on the LIRR", "at work", "at Mighty Taco", "at the Phoebe Bridger's concert", "by the docks", "near one of those classic active shootouts", "at the chili's", "in the applebee's bathroom", "on foreign land", "in the Long Island Sound", "in heaven", "in the Deep Sea Metro", "in the belly of a whale, like jonah", "in woody from toy story's boot", "on Red Couch", "during a Philadelphia sports riot", "inside a secret", "at the peach mag reading", "at the Clam Bake", "at the airport", "at baggage claim", "where we met", "where we joined body and soul together", "in Hawaii!", "in peach mag headquarters"]
+  var events = ["cause the COVID-19 pandemic", "the worm", "the ice bucket challenge", "9/11", "the sinking of the lusitania", "Y2K", "the miracle on ice", "the chicago fire", "sports!", "the space landing", "the destruction of hyrule", "the JFK assassination", "pull off the best birthday surprise party ever!", "this", "all of vietnam", "start the titular fire in Billy Joel's classic We Didn't Start the Fire",]
 
   // picks tweet type
   // TYPES are:
@@ -45,23 +45,25 @@ function generateTweet(tweet) {
   // 11: determination
   // 12: not to be
   // 13: blank did blank
+  // 14: putting me on blast
 
-  var endings = [" :)", " /:", " lol", " :')", " :/", " lmao", " ok", " ha haa", "carpe diem!", "waka waka!", "go bills", "o no", ":3", "c:", "", "", "", "", "", "", "", "", ""]
-
+  var endings = [":)", "/:", "lol", " :')", "this says a lot about our society", " :/", " lmao", " ok", "ha haa", "carpe diem!", "waka waka!", "go bills", "o no", ":3", "c:", "and uh, coconut crab", ":/", "please call me", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 
   //random tweet picker
-  var t = Math.floor(Math.random() * 14);
+
+
+  var t = Math.floor(Math.random() * 15);
 
   console.log(t)
   console.log(" ")
-  console.log("nouns length= " + nouns.length)
-  console.log("properNouns length= " + properNouns.length)
-  console.log("verbsIng length= " + verbsIng.length)
-  console.log("verbsS length= " + verbsS.length)
-  console.log("verbsEd length= " + verbsEd.length)
-  console.log("adverbs length= " + adverbs.length)
-  console.log("places length= " + places.length)
-  console.log("events length=" + events.length)
+  console.log("nouns length is " + nouns.length)
+  console.log("properNouns length is " + properNouns.length)
+  console.log("verbsIng length is " + verbsIng.length)
+  console.log("verbsS length is " + verbsS.length)
+  console.log("verbsEd length is " + verbsEd.length)
+  console.log("adverbs length is " + adverbs.length)
+  console.log("places length is " + places.length)
+  console.log("events length is " + events.length)
   console.log(" ")
 
   //shiny check
@@ -85,7 +87,9 @@ function generateTweet(tweet) {
     var properNoun = properNouns[y];
     var z = Math.floor(Math.random() * verbsIng.length);
     var verbIng = verbsIng[z];
-    let tweet = properNoun + " is " + verbIng + ", dont text";
+    var x = Math.floor(Math.random() * endings.length);
+    var ending = endings[x];
+    let tweet = properNoun + " is " + verbIng + ", dont text " + ending;
     return tweet;
   }
 
@@ -206,7 +210,7 @@ function generateTweet(tweet) {
     var properNoun2 = properNouns[z];
     var z1 = Math.floor(Math.random() * endings.length);
     var ending = endings[z1]
-    let tweet = "i ship " + properNoun1 + " and " + properNoun2 + ", no questions" + ending;
+    let tweet = "i ship " + properNoun1 + " and " + properNoun2 + ", no questions " + ending;
     return tweet;
   }
 
@@ -220,7 +224,7 @@ function generateTweet(tweet) {
     var verbIng = verbsIng[z];
     var z1 = Math.floor(Math.random() * endings.length);
     var ending = endings[z1]
-    let tweet = "all " + properNoun + " knows is " + noun + " and " + verbIng + ending;
+    let tweet = "all " + properNoun + " knows is " + noun + " and " + verbIng + " " + ending;
     return tweet;
   }
 
@@ -252,7 +256,7 @@ function generateTweet(tweet) {
     var noun2 = nouns[y];
     var z1 = Math.floor(Math.random() * endings.length);
     var ending = endings[z1]
-    let tweet = "maybe the real " + noun + " was the " + noun2 + " we made along the way" + ending;
+    let tweet = "maybe the real " + noun + " was the " + noun2 + " we made along the way " + ending;
     return tweet;
   }
 
@@ -278,7 +282,7 @@ function generateTweet(tweet) {
     var noun = nouns[z];
     var z1 = Math.floor(Math.random() * endings.length);
     var ending = endings[z1]
-    let tweet = "not to get all " + adjective + " on main, but " + properNoun + " is not your " + noun + ending;
+    let tweet = "not to get all " + adjective + " on main, but " + properNoun + " is not your " + noun + " " + ending;
     return tweet;
   }
 
@@ -293,4 +297,17 @@ function generateTweet(tweet) {
     let tweet = properNoun + " did " + event + ending;
     return tweet;
   }
+
+  // PUTTING ME ON BLAST
+  if (t === 14) {
+    var y = Math.floor(Math.random() * properNouns.length);
+    var properNoun = properNouns[y];
+    var z = Math.floor(Math.random() * verbsIng.length);
+    var verbIng = verbsIng[z];
+    var x = Math.floor(Math.random() * endings.length);
+    var ending = endings[x];
+    let tweet = "why is " + properNoun + " putting me on blast for " + verbIng + " ???? " + ending;
+    return tweet;
+  }
 }
+
