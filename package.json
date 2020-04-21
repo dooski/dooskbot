@@ -2,7 +2,7 @@
   "name": "dooskbot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "tweet.js",
   "scripts": {
     "start": "node index.js",
     "one": "node one.js",
