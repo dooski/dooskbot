@@ -239,6 +239,5 @@ function dooskbot() {
 }
 
 module.exports = {
-    tweet,
-    reply
+    tweet
 }

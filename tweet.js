@@ -2,18 +2,14 @@
 const dooskbot = require('./dooskbot')
 //calls the Twitter API
 const Twit = require('twit');
-
-//Twitter API keys
-let T = new Twit({
-  consumer_key: 'MxxAz1Qiy2syu9DnepL7Cm5rm',
-  consumer_secret: 'n6Wrjkzm3SU5xTM53QenVuQuvDHRPkHD3Ms8zlm8S3MqNS4Vm3',
-  access_token: '1232125524035723270-qW48ORdFQCSCJ1FNlfcDT0rzZ1y6Gm',
-  access_token_secret: 'I1dT9knpbsGmckVqsrpikKMM7XIAypxmtpop5MAe1nZ2L'
-})
+//API key
+const key = require('./key')
+let T = key.T
 
 // TWEETS
 function process() {
   //runs dooskbot.js to create tweet
+
   let tweet = dooskbot.tweet;
 
   //sends out returned tweet
@@ -70,6 +66,6 @@ function stream() {
 }
 
 //timing for tweeting and stream
-setTimeout(process, 1)
+setTimeout(process, 2000)
 setTimeout(stream, 2000)
 setInterval(process, 3600000)
