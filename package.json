@@ -1,7 +1,7 @@
 {
   "name": "dooskbot",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.1.8",
+  "description": "DOOSKBOT\r v 0.1.6\r Author: Dan McKeon",
   "main": "tweet.js",
   "scripts": {
     "start": "node tweet.js",
@@ -12,5 +12,14 @@
   "license": "ISC",
   "dependencies": {
     "twit": "^2.2.11"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dooski/dooskbot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dooski/dooskbot/issues"
+  },
+  "homepage": "https://github.com/dooski/dooskbot#readme"
 }
