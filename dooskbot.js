@@ -1,250 +1,244 @@
-
+//calls dictionary.js for all word objects
 const dictionary = require('./dictionary')
-let tweet = dooskbot();
+//creates tweet or reply to return to tweet.js
+var tweet = dooskbot();
+// var reply = reply();
 
+//tweet generation function
 function dooskbot() {
-    //random tweet picker
+    //generates a random number between 0 and 16 to pick one 
+    //of the 17 tweet formats
     let t = Math.floor(Math.random() * 17);
 
-    // console.log(t)
-    // console.log(" ")
-    // console.log("nouns length is " + nouns.length)
-    // console.log("properNouns length is " + properNouns.length)
-    // console.log("verbsIng length is " + verbsIng.length)
-    // console.log("verbsS length is " + verbsS.length)
-    // console.log("verbsEd length is " + verbsEd.length)
-    // console.log("adverbs length is " + adverbs.length)
-    // console.log("adjectives length is " + adjectives.length)
-    // console.log("places length is " + places.length)
-    // console.log("events length is " + events.length)
-    // console.log(" ")
-
-    //shiny check
+    //shiny check; generates a number between 0 annd 69; if shiny = 69
+    //and t = 4, dooskbot returns a shiny tweet!
     let shiny = Math.floor(Math.random() * 70)
     if (shiny === 69) {
         console.log("shiny!")
     }
-    //shiny tweet
+
+    //shiny tweet generation
     if (shiny === 69 && t === 4) {
-        var y = Math.floor(Math.random() * properNouns.length);
-        var properNoun = properNouns[y];
+        let a = Math.floor(Math.random() * properNouns.length);
+        let properNoun = properNouns[a];
         let tweet = "* a shiny " + properNoun + " appears! *";
         return tweet
     }
 
-    // tweets
-    // DONT TEXT
+    // standard tweet formats (not shiny)
+    // 1. DONT TEXT
     if (t === 0) {
-        var y = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun = dictionary.properNouns[y];
-        var z = Math.floor(Math.random() * dictionary.verbsIng.length);
-        var verbIng = dictionary.verbsIng[z];
-        var x = Math.floor(Math.random() * dictionary.endings.length);
-        var ending = dictionary.endings[x];
+        let a = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun = dictionary.properNouns[a];
+        let b = Math.floor(Math.random() * dictionary.verbsIng.length);
+        let verbIng = dictionary.verbsIng[b];
+        let c = Math.floor(Math.random() * dictionary.endings.length);
+        let ending = dictionary.endings[c];
         let tweet = properNoun + " is " + verbIng + ", dont text " + ending;
         return tweet
     }
 
-    // DOES SOMETHING
+    // 2. DOES SOMETHING
     if (t === 1) {
-        var x = Math.floor(Math.random() * dictionary.adverbs.length);
-        var adverb = dictionary.adverbs[x];
-        var y = Math.floor(Math.random() * dictionary.verbsS.length);
-        var verboS = dictionary.verbsS[y];
-        var z = Math.floor(Math.random() * dictionary.places.length);
-        var place = dictionary.places[z];
+        let a = Math.floor(Math.random() * dictionary.adverbs.length);
+        let adverb = dictionary.adverbs[a];
+        let b = Math.floor(Math.random() * dictionary.verbsS.length);
+        let verboS = dictionary.verbsS[b];
+        let c = Math.floor(Math.random() * dictionary.places.length);
+        let place = dictionary.places[c];
         let tweet = "*" + adverb + " " + verboS + " " + place + "*";
         return tweet
     }
 
-    // AS A TREAT
+    // 3. AS A TREAT
     if (t === 2) {
-        var y = Math.floor(Math.random() * dictionary.nouns.length);
-        var noun = dictionary.nouns[y];
-        var z = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun = dictionary.properNouns[z];
+        let a = Math.floor(Math.random() * dictionary.nouns.length);
+        let noun = dictionary.nouns[a];
+        let b = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun = dictionary.properNouns[b];
         let tweet = properNoun + " can have little a " + noun + ", as a treat";
         return tweet
     }
 
-    // ITS ABOUT
+    // 4. ITS ABOUT
     if (t === 3) {
-        var about = Math.floor(Math.random() * 2);
-        //noun
+        let about = Math.floor(Math.random() * 2);
+        //uses common noun
         if (about === 0) {
-            var y = Math.floor(Math.random() * dictionary.nouns.length);
-            var noun = dictionary.nouns[y];
+            let a = Math.floor(Math.random() * dictionary.nouns.length);
+            let noun = dictionary.nouns[a];
             let tweet = "its about the " + noun + ", send tweet";
             return tweet
         }
-        //properNoun
+        //uses proper noun
         if (about === 1) {
-            var y = Math.floor(Math.random() * dictionary.properNouns.length);
-            var properNoun = dictionary.properNouns[y];
+            let a = Math.floor(Math.random() * dictionary.properNouns.length);
+            let properNoun = dictionary.properNouns[a];
             let tweet = "its about " + properNoun + ", send tweet";
             return tweet
         }
-        //verbsIng
+        //uses a verbsIng phrase
         if (about === 2) {
-            var y = Math.floor(Math.random() * dictionary.verbsIng.length);
-            var verbIng = dictionary.verbsIng[y];
+            let a = Math.floor(Math.random() * dictionary.verbsIng.length);
+            let verbIng = dictionary.verbsIng[a];
             let tweet = "its about " + verbIng + ", send tweet";
             return tweet
         }
     }
 
-    // SAID TRANS RIGHTS
+    // 5. ___ SAID ____ RIGHTS
     if (t === 4 && shiny !== 69) {
-        var y = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun = dictionary.properNouns[y];
-        var rights = ["trans rights", "trans visibility", "its my turn!", "gay rights", "bi visibility", "queer visibility", "dont worry :)"];
-        var x = Math.floor(Math.random() * rights.length);
-        var right = rights[x]
+        let a = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun = dictionary.properNouns[a];
+        let rights = ["trans rights", "trans visibility", "its my turn!", "gay rights", "bi visibility", "queer visibility", "dont worry :)"];
+        let b = Math.floor(Math.random() * rights.length);
+        let right = rights[b]
         let tweet = properNoun + " said " + right;
         return tweet
     }
 
-    // THE POWER OF
+    // 6. THE POWER OF
     if (t === 5) {
-        var x = Math.floor(Math.random() * dictionary.adjectives.length);
-        var adjective = dictionary.adjectives[x];
-        var y = Math.floor(Math.random() * dictionary.nouns.length);
-        var noun = dictionary.nouns[y];
+        let a = Math.floor(Math.random() * dictionary.adjectives.length);
+        let adjective = dictionary.adjectives[a];
+        let b = Math.floor(Math.random() * dictionary.nouns.length);
+        let noun = dictionary.nouns[b];
         let tweet = "the power of " + adjective + " " + noun + "s shines within you";
         return tweet
     }
 
-    // SHIPPING
+    // 7. SHIPPING
     if (t === 6) {
-        var y = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun1 = dictionary.properNouns[y];
-        var z = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun2 = dictionary.properNouns[z];
-        var z1 = Math.floor(Math.random() * dictionary.endings.length);
-        var ending = dictionary.endings[z1]
+        let a = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun1 = dictionary.properNouns[a];
+        let b = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun2 = dictionary.properNouns[b];
+        let c = Math.floor(Math.random() * dictionary.endings.length);
+        let ending = dictionary.endings[c]
         let tweet = "i ship " + properNoun1 + " and " + properNoun2 + ", no questions " + ending;
         return tweet
     }
 
-    // ALL NOUN KNOWS IS
+    // 8. ALL blank KNOWS IS
     if (t === 7) {
-        var x = Math.floor(Math.random() * dictionary.nouns.length);
-        var noun = dictionary.nouns[x];
-        var y = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun = dictionary.properNouns[y];
-        var z = Math.floor(Math.random() * dictionary.verbsIng.length);
-        var verbIng = dictionary.verbsIng[z];
-        var z1 = Math.floor(Math.random() * dictionary.endings.length);
-        var ending = dictionary.endings[z1]
+        let a = Math.floor(Math.random() * dictionary.nouns.length);
+        let noun = dictionary.nouns[a];
+        let b = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun = dictionary.properNouns[b];
+        let c = Math.floor(Math.random() * dictionary.verbsIng.length);
+        let verbIng = dictionary.verbsIng[c];
+        let d = Math.floor(Math.random() * dictionary.endings.length);
+        let ending = dictionary.endings[d]
         let tweet = "all " + properNoun + " knows is " + noun + " and " + verbIng + " " + ending;
         return tweet
     }
 
-    // IN MY TOWN
+    // 9. IN MY TOWN????
     if (t === 8) {
-        var x = Math.floor(Math.random() * dictionary.nouns.length);
-        var noun = dictionary.nouns[x];
-        var y = Math.floor(Math.random() * dictionary.adjectives.length);
-        var adjective = dictionary.adjectives[y];
+        let a = Math.floor(Math.random() * dictionary.nouns.length);
+        let noun = dictionary.nouns[a];
+        let b = Math.floor(Math.random() * dictionary.adjectives.length);
+        let adjective = dictionary.adjectives[b];
         let tweet = noun + "? in my " + adjective + " town????";
         return tweet
     }
 
-    // WHAT IF WE
+    // 10. WHAT IF WE
     if (t === 9) {
-        var x = Math.floor(Math.random() * dictionary.verbsEd.length);
-        var verbEd = dictionary.verbsEd[x];
-        var y = Math.floor(Math.random() * dictionary.places.length);
-        var place = dictionary.places[y];
+        let a = Math.floor(Math.random() * dictionary.verbsEd.length);
+        let verbEd = dictionary.verbsEd[a];
+        let b = Math.floor(Math.random() * dictionary.places.length);
+        let place = dictionary.places[b];
         let tweet = "what if we " + verbEd + " " + place + "? haha just kidding............ unless?";
         return tweet
     }
 
-    //MAYBE THE REAL
+    // 11. MAYBE THE REAL
     if (t === 10) {
-        var x = Math.floor(Math.random() * dictionary.nouns.length);
-        var noun = nouns[x];
-        var y = Math.floor(Math.random() * dictionary.nouns.length);
-        var noun2 = dictionary.nouns[y];
-        var z1 = Math.floor(Math.random() * dictionary.endings.length);
-        var ending = dictionary.endings[z1]
+        let a = Math.floor(Math.random() * dictionary.nouns.length);
+        let noun = dictionary.nouns[a];
+        let b = Math.floor(Math.random() * dictionary.nouns.length);
+        let noun2 = dictionary.nouns[b];
+        let c = Math.floor(Math.random() * dictionary.endings.length);
+        let ending = dictionary.endings[c]
         let tweet = "maybe the real " + noun + " was the " + noun2 + " we made along the way " + ending;
         return tweet
     }
 
-    //FILLS YOU WITH DETERMINATION
+    // 12. FILLS YOU WITH DETERMINATION
     if (t === 11) {
-        var x = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun = dictionary.properNouns[x];
-        var y = Math.floor(Math.random() * dictionary.adverbs.length);
-        var adverb = dictionary.adverbs[y];
-        var z = Math.floor(Math.random() * dictionary.verbsIng.length);
-        var verb = dictionary.verbsIng[z];
+        let a = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun = dictionary.properNouns[a];
+        let b = Math.floor(Math.random() * dictionary.adverbs.length);
+        let adverb = dictionary.adverbs[b];
+        let c = Math.floor(Math.random() * dictionary.verbsIng.length);
+        let verb = dictionary.verbsIng[c];
         let tweet = "the sight of " + properNoun + " " + adverb + " " + verb + "; it fills me with determination"
         return tweet
     }
 
-    // HOT TAKE
+    // 13. HOT TAKE
     if (t === 12) {
-        var x = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun = dictionary.properNouns[x];
-        var y = Math.floor(Math.random() * dictionary.adjectives.length);
-        var adjective = dictionary.adjectives[y];
-        var z = Math.floor(Math.random() * dictionary.nouns.length);
-        var noun = dictionary.nouns[z];
-        var z1 = Math.floor(Math.random() * dictionary.endings.length);
-        var ending = dictionary.endings[z1]
+        let a = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun = dictionary.properNouns[a];
+        let b = Math.floor(Math.random() * dictionary.adjectives.length);
+        let adjective = dictionary.adjectives[b];
+        let c = Math.floor(Math.random() * dictionary.nouns.length);
+        let noun = dictionary.nouns[c];
+        let d = Math.floor(Math.random() * dictionary.endings.length);
+        let ending = dictionary.endings[d]
         let tweet = "not to get all " + adjective + " on main, but " + properNoun + " is not your " + noun + " " + ending;
         return tweet
     }
 
-    // BLANK DID BLANK
+    // 14. blank DID blank
     if (t === 13) {
-        var x = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun = dictionary.properNouns[x];
-        var y = Math.floor(Math.random() * dictionary.events.length);
-        var event = dictionary.events[y];
-        var z = Math.floor(Math.random() * dictionary.endings.length);
-        var ending = dictionary.endings[z];
+        let a = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun = dictionary.properNouns[a];
+        let b = Math.floor(Math.random() * dictionary.events.length);
+        let event = dictionary.events[b];
+        let c = Math.floor(Math.random() * dictionary.endings.length);
+        let ending = dictionary.endings[c];
         let tweet = properNoun + " did " + event + ending;
         return tweet
     }
 
-    // PUTTING ME ON BLAST
+    // 15. PUTTING ME ON BLAST
     if (t === 14) {
-        var y = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun = dictionary.properNouns[y];
-        var z = Math.floor(Math.random() * dictionary.verbsIng.length);
-        var verbIng = dictionary.verbsIng[z];
-        var x = Math.floor(Math.random() * dictionary.endings.length);
-        var ending = dictionary.endings[x];
+        let a = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun = dictionary.properNouns[a];
+        let b = Math.floor(Math.random() * dictionary.verbsIng.length);
+        let verbIng = dictionary.verbsIng[b];
+        let c = Math.floor(Math.random() * dictionary.endings.length);
+        let ending = dictionary.endings[c];
         let tweet = "why is " + properNoun + " putting me on blast for " + verbIng + " ???? " + ending;
         return tweet
     }
 
-    // SAME AS IT EVER WAS
+    // 16. SAME AS IT EVER WAS
     if (t === 15) {
-        var y = Math.floor(Math.random() * dictionary.verbsIng.length);
-        var verbIng = dictionary.verbsIng[y];
-        var x = Math.floor(Math.random() * dictionary.places.length);
-        var place = dictionary.places[x];
+        let a = Math.floor(Math.random() * dictionary.verbsIng.length);
+        let verbIng = dictionary.verbsIng[a];
+        let b = Math.floor(Math.random() * dictionary.places.length);
+        let place = dictionary.places[b];
         let tweet = "and you may find yourself " + verbIng + " " + place;
         return tweet
     }
 
-    // MOM CAN YOU PICK ME UP
+    // 17. MOM CAN YOU PICK ME UP
     if (t === 16) {
-        var y = Math.floor(Math.random() * dictionary.verbsIng.length);
-        var verbIng = dictionary.verbsIng[y];
-        var x = Math.floor(Math.random() * dictionary.properNouns.length);
-        var properNoun = dictionary.properNouns[x];
-        var z = Math.floor(Math.random() * dictionary.endings.length);
-        var ending = dictionary.endings[z]
+        let a = Math.floor(Math.random() * dictionary.verbsIng.length);
+        let verbIng = dictionary.verbsIng[a];
+        let b = Math.floor(Math.random() * dictionary.properNouns.length);
+        let properNoun = dictionary.properNouns[b];
+        let c = Math.floor(Math.random() * dictionary.endings.length);
+        let ending = dictionary.endings[c]
         let tweet = "mom can you pick me up? " + properNoun + " is " + verbIng + " " + ending;
         return tweet
     }
 }
 
 module.exports = {
-    tweet
+    tweet,
+    reply
 }
