@@ -6,7 +6,7 @@ const dooskbot = require('./dooskbot')
 const Twit = require('twit');
 //API key
 // const key = require('./key')
-let T = key.T || new aws.S3({
+let T = new aws.S3({
     consumer_key: process.env.KEY,
     consumer_secret: process.env.KEY_SECRET,
     access_token: process.env.TOKEN,
