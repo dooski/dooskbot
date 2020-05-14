@@ -118,7 +118,6 @@ function reply(tweet) {
         sendReply(params)
     } else console.log("not replying")
 }
-
 function sendReply(params) {
     console.log(params)
     T.post('statuses/update', params, function (err, data, response) {
