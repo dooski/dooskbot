@@ -1,3 +1,7 @@
+var express = require("express");
+var app = express();
+var PORT = process.env.PORT || 3000;
+
 //calls the tweet generation code
 const dooskbot = require('./dooskbot')
 //calls the reply functionality
@@ -35,6 +39,8 @@ function streamStart() {
 
 
 //timing for tweeting and stream
-setTimeout(process, 2000)
-setTimeout(streamStart, 1000)
-setInterval(process, 3600000)
+app.listen(PORT, function () {
+  setTimeout(process, 2000)
+  setTimeout(streamStart, 1000)
+  setInterval(process, 3600000)
+})
