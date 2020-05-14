@@ -6,6 +6,7 @@ const dooskbot = require('./dooskbot')
 const Twit = require('twit');
 //API key
 // const key = require('./key')
+const aws = require('aws-sdk');
 let T = new aws.S3({
     consumer_key: process.env.KEY,
     consumer_secret: process.env.KEY_SECRET,
