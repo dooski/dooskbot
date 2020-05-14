@@ -14,12 +14,14 @@ const express = require('express');
 var app = express();
 var PORT = process.env.PORT || 3000;
 
-let T = new aws.S3({
+let keys = new aws.S3({
     consumer_key: process.env.KEY,
     consumer_secret: process.env.KEY_SECRET,
     access_token: process.env.TOKEN,
     access_token_secret: process.env.TOKEN_SECRET
 });
+
+let T = new Twit(keys)
 
 // TWEETS
 function go() {
