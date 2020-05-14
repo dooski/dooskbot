@@ -5,8 +5,13 @@ const dooskbot = require('./dooskbot')
 //calls the Twitter API
 const Twit = require('twit');
 //API key
-const key = require('./key')
-let T = key.T
+// const key = require('./key')
+let T = key.T || new aws.S3({
+    consumer_key: process.env.KEY,
+    consumer_secret: process.env.KEY_SECRET,
+    access_token: process.env.TOKEN,
+    access_token_secret: process.env.TOKEN_SECRET
+});
 
 var start = stream()
 
