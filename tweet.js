@@ -9,11 +9,11 @@ const dictionary = require('./dictionary')
 const Twit = require('twit');
 //API key
 // const key = require('./key')
-const aws = require('aws-sdk');
 const express = require('express');
 var app = express();
 var PORT = process.env.PORT || 3000;
 
+// let T = key.T
 let T = new Twit({
     consumer_key: process.env.KEY,
     consumer_secret: process.env.KEY_SECRET,
@@ -44,10 +44,14 @@ function streamStart() {
     var start = reply.start
 }
 
+function beep() {
+    console.log("beep")
+}
 
 //timing for tweeting and stream
 app.listen(PORT, function () {
     setTimeout(go, 2000)
     setTimeout(streamStart, 1000)
+    setInterval(beep, 180000)
     setInterval(go, 3600000)
 })

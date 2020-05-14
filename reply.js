@@ -4,10 +4,12 @@ const dictionary = require('./dictionary')
 const dooskbot = require('./dooskbot')
 //calls the Twitter API
 const Twit = require('twit');
-//API key
+//key
 // const key = require('./key')
-const aws = require('aws-sdk');
 
+let T = key.T
+
+// key for login
 let T = new Twit({
     consumer_key: process.env.KEY,
     consumer_secret: process.env.KEY_SECRET,
@@ -31,8 +33,8 @@ function stream() {
             throw err
         }
         // listens for mentions of dooskbot
-        var stream = T.stream('statuses/filter', { track: ['@dooskbot'] });
-        stream.on('tweet', tweetEvent);
+        var streamReply = T.stream('statuses/filter', { track: ['@dooskbot'] });
+        streamReply.on('tweet', tweetEvent);
         console.log("listening... waiting .. . . ..")
         // when dooskbot is mentioned:
         reply
