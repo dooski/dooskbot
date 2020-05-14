@@ -1,4 +1,3 @@
-var PORT = process.env.PORT || 3000;
 
 //calls the tweet generation code
 const dooskbot = require('./dooskbot')
@@ -9,8 +8,18 @@ const dictionary = require('./dictionary')
 //calls the Twitter API
 const Twit = require('twit');
 //API key
-const key = require('./key')
-let T = key.T
+// const key = require('./key')
+const aws = require('aws-sdk');
+const express = require('express');
+var app = express();
+var PORT = process.env.PORT || 3000;
+
+let T = key.T || new aws.S3({
+    consumer_key: process.env.KEY,
+    consumer_secret: process.env.KEY_SECRET,
+    access_token: process.env.TOKEN,
+    access_token_secret: process.env.TOKEN_SECRET
+});
 
 // TWEETS
 function go() {
@@ -40,5 +49,5 @@ function streamStart() {
 app.listen(PORT, function () {
     setTimeout(go, 2000)
     setTimeout(streamStart, 1000)
-    setInterval(process, 3600000)
+    setInterval(go, 3600000)
 })
