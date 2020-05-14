@@ -7,7 +7,7 @@ const Twit = require('twit');
 //key
 // const key = require('./key')
 
-let T = key.T
+// let T = key.T
 
 // key for login
 let T = new Twit({
