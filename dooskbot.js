@@ -1,9 +1,6 @@
 //calls dictionary.js for all word objects
 const dictionary = require('./dictionary')
 //creates tweet or reply to return to tweet.js
-var tweet = dooskbot();
-// var reply = reply();
-
 //tweet generation function
 function dooskbot() {
     //generates a random number between 0 and 16 to pick one 
@@ -187,7 +184,7 @@ function dooskbot() {
         let noun = dictionary.nouns[c];
         let d = Math.floor(Math.random() * dictionary.endings.length);
         let ending = dictionary.endings[d]
-        let tweet = "not to get all " + adjective + " on main, but " + properNoun + " is not your " + noun + " " + ending;
+        let tweet = "not to get all " + noun + ", but " + properNoun + " is not really " + adjective + " " + ending;
         return tweet
     }
 
@@ -238,6 +235,7 @@ function dooskbot() {
     }
 }
 
+
 module.exports = {
-    tweet
+    dooskbot
 }
