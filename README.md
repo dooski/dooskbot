@@ -26,3 +26,5 @@ b. Planned development
 
 3. CURRENT ISSUES
 - The code was written as I was learning how to code, and so at some point will require a massive amount of clean up, preferably before v 0.2 is released. This clean up will involve sepearting the Dictionary from the main tweet.js file to allow the Test Kitchen to be more easily synced up.
+
+4. Terry's Clause :)
