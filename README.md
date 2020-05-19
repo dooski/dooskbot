@@ -1,30 +1,27 @@
 DOOSKBOT
-v 0.1.6
-Author: Dan McKeon
+v 0.2
+Author: Dan McKeon & Terry Clines
 
 1. PURPOSE
-Dooskbot is a Twitter bot that generates a tweet using variables for different parts of speech and set phrases, like a javascript mad libs. Those variables (referred to as Dictionary) give Dooskbot a set series of topics and interests while giving it enough options to avoid negative repition. The purpose is simply a Twitter bot that makes mildly incoherent jokes.
+Dooskbot is a Twitter bot that generates a tweet using variables for different parts of speech and set phrases, and replies to other user's replies. Those variables (referred to as Dictionary) give Dooskbot a set series of topics and interests while giving it enough options to avoid negative repition. The goal is for Dooskbot to act as a Twitter mimic.
 
 2. FEATURES
-a. Current (as of v 0.1.6)
-- tweet.js generates a random number between 0 and 17, meaning there is a % chance for each number being picked. This is the 't' value. Each type of tweet is held an if statement activated by unique values of 't.' There is also a shiny value generated. There is a 1 in 70 chance of the shiny value returning true, but the t value must also return a certain number from 0 to 17. If this happens, there will be a shiny tweet. (This is a Pokemon reference and really has no bearing on anything besides being rare.)
+a. Current (as of v 0.2)
+- Dooskbot picks one of 20 tweet formats every hour and runs a series of functions that pulls from a dictionary of different arrays to construct a tweet. It then sends the tweet out with no human approval or input once the script is running. For some word-types, Dooskbot will remember words used recently and be less likely to pick them for a period of time.
 
-- The tweets pull from the Dictionary based on random number generators that use the length of each array. For tweets that have two of the same parts of speech, there is no prevention of doubling and using the same part of speech again.
+- Dooskbot has a high chance of replying to replies to its tweets, though it isn't every single time. The reply does a very rudamentary analysis of the tweet it is replying to, looking at who it is from and certain key words in the tweet, which then influences what its reply will be.
 
-- There is also what's called the Dooskbot Test Kitchen, a simple HTML page that runs the tweet.js script but returns the generated tweet as a text box instead of tweeting it out.
+- Dooskbot Test Kitchen is a simple HTML page that runs the tweet generation script but returns the generated tweet in a text box instead of tweeting it out. This is currently being rebuilt as part of the planned v 0.5.
 
 b. Planned development 
-(v 0.2)
-- Automatic, scheduled tweeting
-- Reply tweets
-- Memory of which words were used recently, and a reduced likelihood they be used again soon
 (v 0.3)
-- User word suggestions sent through the Test Kitchen
-(v 0.4)
-- Weighted values to words
-- Basic analysis to replies
+- Expanded dictionary.
+- Expanded reply forms.
+- Mood generation based on real-world factors to influence tweet content and frequency.
+
 
 3. CURRENT ISSUES
-- The code was written as I was learning how to code, and so at some point will require a massive amount of clean up, preferably before v 0.2 is released. This clean up will involve sepearting the Dictionary from the main tweet.js file to allow the Test Kitchen to be more easily synced up.
+- Dooskbot replies are very general currently with very little input from the tweet it is replying to. Future development should be focused on more complex analysis of tweets.
 
 4. Terry's Clause :)
+- :)

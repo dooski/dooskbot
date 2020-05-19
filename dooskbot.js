@@ -1,12 +1,12 @@
 //calls dictionary.js for all word objects
 const dictionary = require('./dictionary')
-//creates tweet or reply to return to tweet.js
+//creates tweet to return to tweet.js
 //tweet generation function
 function dooskbot() {
-    //generates a random number between 0 and 16 to pick one 
-    //of the 17 tweet formats
-    let t = Math.floor(Math.random() * 17);
-
+    // generates a random number between 0 and 18 to pick one 
+    // of the 18 tweet formats
+    let t = Math.floor(Math.random() * 19);
+    t = 10
     //shiny check; generates a number between 0 annd 69; if shiny = 69
     //and t = 4, dooskbot returns a shiny tweet!
     let shiny = Math.floor(Math.random() * 70)
@@ -16,209 +16,172 @@ function dooskbot() {
 
     //shiny tweet generation
     if (shiny === 69 && t === 4) {
-        let a = Math.floor(Math.random() * properNouns.length);
-        let properNoun = properNouns[a];
-        let tweet = "* a shiny " + properNoun + " appears! *";
+        let person = dictionary.realPerson()
+        let tweet = "* a shiny " + person + " appears! *";
         return tweet
     }
 
     // standard tweet formats (not shiny)
     // 1. DONT TEXT
     if (t === 0) {
-        let a = Math.floor(Math.random() * dictionary.properNouns.length);
-        let properNoun = dictionary.properNouns[a];
-        let b = Math.floor(Math.random() * dictionary.verbsIng.length);
-        let verbIng = dictionary.verbsIng[b];
-        let c = Math.floor(Math.random() * dictionary.endings.length);
-        let ending = dictionary.endings[c];
-        let tweet = properNoun + " is " + verbIng + ", dont text " + ending;
+        let person = dictionary.realPerson()
+        let verbIng = dictionary.verbIng()
+        let ending = dictionary.ending()
+        let tweet = person + " is " + verbIng + ", dont text " + ending;
         return tweet
     }
 
     // 2. DOES SOMETHING
     if (t === 1) {
-        let a = Math.floor(Math.random() * dictionary.adverbs.length);
-        let adverb = dictionary.adverbs[a];
-        let b = Math.floor(Math.random() * dictionary.verbsS.length);
-        let verboS = dictionary.verbsS[b];
-        let c = Math.floor(Math.random() * dictionary.places.length);
-        let place = dictionary.places[c];
-        let tweet = "*" + adverb + " " + verboS + " " + place + "*";
+        let adverb = dictionary.adverb()
+        let verb = dictionary.verbPersonPast()
+        let person = dictionary.realPerson()
+        let place = dictionary.placePrep()
+        let tweet = "*" + adverb + " " + verb + " " + person + " " + place + "*";
         return tweet
     }
 
     // 3. AS A TREAT
     if (t === 2) {
-        let a = Math.floor(Math.random() * dictionary.nouns.length);
-        let noun = dictionary.nouns[a];
-        let b = Math.floor(Math.random() * dictionary.properNouns.length);
-        let properNoun = dictionary.properNouns[b];
-        let tweet = properNoun + " can have little a " + noun + ", as a treat";
+        let person = dictionary.realPerson();
+        let thing = dictionary.thingSingular()
+        let tweet = person + " can have little a " + thing + ", as a treat";
         return tweet
     }
 
     // 4. ITS ABOUT
     if (t === 3) {
         let about = Math.floor(Math.random() * 2);
-        //uses common noun
+        //uses plural noun
         if (about === 0) {
-            let a = Math.floor(Math.random() * dictionary.nouns.length);
-            let noun = dictionary.nouns[a];
-            let tweet = "its about the " + noun + ", send tweet";
+            let thing = dictionary.thingPlural()
+            let tweet = "its about the " + thing + ", send tweet";
             return tweet
         }
-        //uses proper noun
+        //uses plural person
         if (about === 1) {
-            let a = Math.floor(Math.random() * dictionary.properNouns.length);
-            let properNoun = dictionary.properNouns[a];
-            let tweet = "its about " + properNoun + ", send tweet";
+            let person = dictionary.personPlural()
+            let tweet = "its about all the " + properNoun + ", send tweet";
             return tweet
         }
-        //uses a verbsIng phrase
+        //uses a place
         if (about === 2) {
-            let a = Math.floor(Math.random() * dictionary.verbsIng.length);
-            let verbIng = dictionary.verbsIng[a];
-            let tweet = "its about " + verbIng + ", send tweet";
+            let place = dictionary.placeSolo()
+            let tweet = "its about " + place + ", send tweet";
             return tweet
         }
     }
 
     // 5. ___ SAID ____ RIGHTS
     if (t === 4 && shiny !== 69) {
-        let a = Math.floor(Math.random() * dictionary.properNouns.length);
-        let properNoun = dictionary.properNouns[a];
+        let person = dictionary.realPerson()
         let rights = ["trans rights", "trans visibility", "its my turn!", "gay rights", "bi visibility", "queer visibility", "dont worry :)"];
         let b = Math.floor(Math.random() * rights.length);
         let right = rights[b]
-        let tweet = properNoun + " said " + right;
+        let tweet = person + " said " + right;
         return tweet
     }
 
     // 6. THE POWER OF
     if (t === 5) {
-        let a = Math.floor(Math.random() * dictionary.adjectives.length);
-        let adjective = dictionary.adjectives[a];
-        let b = Math.floor(Math.random() * dictionary.nouns.length);
-        let noun = dictionary.nouns[b];
-        let tweet = "the power of " + adjective + " " + noun + "s shines within you";
+        let adjective = dictionary.adjective()
+        let thing = dictionary.thingPlural()
+        let tweet = "the power of " + adjective + " " + thing + " shines within you";
         return tweet
     }
 
     // 7. SHIPPING
     if (t === 6) {
-        let a = Math.floor(Math.random() * dictionary.properNouns.length);
-        let properNoun1 = dictionary.properNouns[a];
-        let b = Math.floor(Math.random() * dictionary.properNouns.length);
-        let properNoun2 = dictionary.properNouns[b];
-        let c = Math.floor(Math.random() * dictionary.endings.length);
-        let ending = dictionary.endings[c]
-        let tweet = "i ship " + properNoun1 + " and " + properNoun2 + ", no questions " + ending;
+        let person1 = dictionary.realPerson()
+        let person2 = dictionary.realPerson()
+        let ending = dictionary.ending()
+        let tweet = "i ship " + person1 + " and " + person2 + ", " + ending;
         return tweet
     }
 
     // 8. ALL blank KNOWS IS
     if (t === 7) {
-        let a = Math.floor(Math.random() * dictionary.nouns.length);
-        let noun = dictionary.nouns[a];
-        let b = Math.floor(Math.random() * dictionary.properNouns.length);
-        let properNoun = dictionary.properNouns[b];
-        let c = Math.floor(Math.random() * dictionary.verbsIng.length);
-        let verbIng = dictionary.verbsIng[c];
-        let d = Math.floor(Math.random() * dictionary.endings.length);
+        let person = dictionary.realPerson()
+        let thing = dictionary.thingSingular()
+        let people = dictionary.personPlural()
+        let ing = dictionary.verbIng()
         let ending = dictionary.endings[d]
-        let tweet = "all " + properNoun + " knows is " + noun + " and " + verbIng + " " + ending;
+        let tweet = "all " + person + " knows is " + thing + ", " + people + " and " + ing + " " + ending;
         return tweet
     }
 
     // 9. IN MY TOWN????
     if (t === 8) {
-        let a = Math.floor(Math.random() * dictionary.nouns.length);
-        let noun = dictionary.nouns[a];
-        let b = Math.floor(Math.random() * dictionary.adjectives.length);
-        let adjective = dictionary.adjectives[b];
-        let tweet = noun + "? in my " + adjective + " town????";
+        let thing = dictionary.thingPlural()
+        let adjective = dictionary.adjective()
+        let place = dictionary.placeSolo()
+        let tweet = thing + "? in this " + adjective + " " + place + "???";
         return tweet
     }
 
     // 10. WHAT IF WE
     if (t === 9) {
-        let a = Math.floor(Math.random() * dictionary.verbsEd.length);
-        let verbEd = dictionary.verbsEd[a];
-        let b = Math.floor(Math.random() * dictionary.places.length);
-        let place = dictionary.places[b];
-        let tweet = "what if we " + verbEd + " " + place + "? haha just kidding............ unless?";
+        let verb = dictionary.verbPersonPast()
+        let person = dictionary.realPerson()
+        let place = dictionary.placePrep()
+        let tweet = "what if we " + verb + " " + person + " " + place + "? haha just kidding............ unless?";
         return tweet
     }
 
     // 11. MAYBE THE REAL
     if (t === 10) {
-        let a = Math.floor(Math.random() * dictionary.nouns.length);
-        let noun = dictionary.nouns[a];
-        let b = Math.floor(Math.random() * dictionary.nouns.length);
-        let noun2 = dictionary.nouns[b];
-        let c = Math.floor(Math.random() * dictionary.endings.length);
-        let ending = dictionary.endings[c]
-        let tweet = "maybe the real " + noun + " was the " + noun2 + " we made along the way " + ending;
+        let thing = dictionary.thingSingular()
+        let things = dictionary.thingPlural()
+        let verb = dictionary.verbObjectPast()
+        let ending = dictionary.ending()
+        let tweet = "maybe the real " + thing + " was all the " + things + " we " + verb + " along the way " + ending;
         return tweet
     }
 
     // 12. FILLS YOU WITH DETERMINATION
     if (t === 11) {
-        let a = Math.floor(Math.random() * dictionary.properNouns.length);
-        let properNoun = dictionary.properNouns[a];
-        let b = Math.floor(Math.random() * dictionary.adverbs.length);
-        let adverb = dictionary.adverbs[b];
-        let c = Math.floor(Math.random() * dictionary.verbsIng.length);
-        let verb = dictionary.verbsIng[c];
-        let tweet = "the sight of " + properNoun + " " + adverb + " " + verb + "; it fills me with determination"
+        let person = dictionary.realPerson()
+        let adverb = dictionary.adverb()
+        let verb = dictionary.verbIng()
+        let tweet = "the sight of " + person + " " + adverb + " " + verb + "; it fills me with determination"
         return tweet
     }
 
     // 13. HOT TAKE
     if (t === 12) {
-        let a = Math.floor(Math.random() * dictionary.properNouns.length);
-        let properNoun = dictionary.properNouns[a];
-        let b = Math.floor(Math.random() * dictionary.adjectives.length);
-        let adjective = dictionary.adjectives[b];
-        let c = Math.floor(Math.random() * dictionary.nouns.length);
-        let noun = dictionary.nouns[c];
-        let d = Math.floor(Math.random() * dictionary.endings.length);
-        let ending = dictionary.endings[d]
-        let tweet = "not to get all " + noun + ", but " + properNoun + " is not really " + adjective + " " + ending;
+        let state = dictionary.state()
+        let adjective = dictionary.adjective()
+        let realPerson = dictionary.realPerson()
+        let ending = dictionary.ending()
+        let tweet = "not to get all " + state + ", but " + realPerson + " is not really " + adjective + " " + ending;
         return tweet
     }
 
-    // 14. blank DID blank
+    // 14.life is just
     if (t === 13) {
-        let a = Math.floor(Math.random() * dictionary.properNouns.length);
-        let properNoun = dictionary.properNouns[a];
-        let b = Math.floor(Math.random() * dictionary.events.length);
-        let event = dictionary.events[b];
-        let c = Math.floor(Math.random() * dictionary.endings.length);
-        let ending = dictionary.endings[c];
-        let tweet = properNoun + " did " + event + ending;
+        let verb1 = dictionary.verbPersonFirst();
+        let people = dictionary.personPlural();
+        let ing = dictionary.verbIng();
+        let verb2 = dictionary.verbObjectFirst();
+        let thing = dictionary.thingSingular()
+        let tweet = "life is really just *" + verb1 + " " + people + "* *" + ing + "* *" + verb2 + " " + thing + "*"
         return tweet
     }
 
     // 15. PUTTING ME ON BLAST
     if (t === 14) {
-        let a = Math.floor(Math.random() * dictionary.properNouns.length);
-        let properNoun = dictionary.properNouns[a];
-        let b = Math.floor(Math.random() * dictionary.verbsIng.length);
-        let verbIng = dictionary.verbsIng[b];
-        let c = Math.floor(Math.random() * dictionary.endings.length);
-        let ending = dictionary.endings[c];
-        let tweet = "why is " + properNoun + " putting me on blast for " + verbIng + " ???? " + ending;
+        let person = dictionary.realPerson()
+        let ing = dictionary.verbIng()
+        let ending = dictionary.ending()
+        let tweet = "why is " + person + " putting me on blast for " + ing + " ???? " + ending;
         return tweet
     }
 
     // 16. SAME AS IT EVER WAS
     if (t === 15) {
-        let a = Math.floor(Math.random() * dictionary.verbsIng.length);
-        let verbIng = dictionary.verbsIng[a];
-        let b = Math.floor(Math.random() * dictionary.places.length);
-        let place = dictionary.places[b];
-        let tweet = "and you may find yourself " + verbIng + " " + place;
+        let ing = dictionary.verbIng()
+        let place = dictionary.placePrep()
+        let tweet = "and you may find yourself " + ing + " " + place;
         return tweet
     }
 
@@ -231,6 +194,24 @@ function dooskbot() {
         let c = Math.floor(Math.random() * dictionary.endings.length);
         let ending = dictionary.endings[c]
         let tweet = "mom can you pick me up? " + properNoun + " is " + verbIng + " " + ending;
+        return tweet
+    }
+
+    // 18. VERBED NOUN just to VERBS again
+    if (t === 17) {
+        let verbEd = dictionary.verbObjectPast()
+        let thing = dictionary.thingSingular()
+        let verb = dictionary.generalVerb()
+        let tweet = verbEd + " " + thing + " just to " + verb + " again";
+        return tweet
+    }
+    // 19. just remembered
+    if (t === 18) {
+        let person = dictionary.realPerson()
+        let state = dictionary.state()
+        let place = dictionary.placePrep()
+        let ending = dictionary.ending()
+        let tweet = "just remembered when me and " + person + " got " + state + " " + place + " " + ending
         return tweet
     }
 }

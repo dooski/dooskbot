@@ -1,27 +1,669 @@
 // DICTIONARY: nouns are singular common nouns; properNouns are singular proper nouns; verbsIng are gerund phrases
 // verbsEd are past tense verbs; adverbs are adverbs ending in -ly; places are prepositional phrases mostly giving location
-var nouns = ["mystery", "love", "jock", "doober", "cadbury egg", "shoobie", "starburst jellybean", "oarfish", "oral hygeine", "dictionary", "goober", "scuba diving", "graham cracker", "gardening", "airplane", "pepperoni", "blue bird", "airhead", "dog", "rancho", "sushi dinner", "hockey", "football", "bare-knuckle boxing", "parade", "friend", "butt", "pudding on a ritz (like the cracker lmao)", "manatee", "maple", "sky", "blood", "tote", "egg", "potion", "chai latte", "chunk", "hot sauce", "medium double double", "boot", "plastic bag", "wealth equality", "captain falcon's nair", "single-use cutlery", "slapper", "magnet", "telephone", "girl scout cookie", "dime", "fake out", "fuckin' fake out", "chicken nugget", "bargain", "tadpole", "fuck up", "work of art", "napkin", "motif", "milkshake", "belly", "champagne", "whale", "shark", "whale shark", "healthy soil", "dirt", "soft pretzel", "queen", "rope", "hawk", "ear", "origami", "frog", "mood ring", "scooter", "nametag", "succulent", "Flamin' Hot Cheetos", "paystub", "PEANUTS", "funfetti cake", "lil soy bean", "pink eye", "grande vanilla latte", "joy con", "subway", "spongebob screenshot", "beautiful hair", "groovy lunch hour", "noosa", "berry", "mouthful of spiders", "old haunted guitar covered in blood that jesus found by the dumpster, ALLEGEDLY"]
-var properNouns = ["me", "steve martin's banjo", "talking dog at the shell shack", "nbc peacock", "muppets christmas special", "Babe", "pelican man", "lunch lady who loves you :)", "franklin the turtle", "larry boy", "npr", "terry gross", "madonna", "Jeb!", "josh groban's angelic voice", "fart vader", "mr. buckley", "glenn close", "gillian anderson", "scully", "mulder", "guy fieri's bottle of bleach", "helen obama carter", "chef bobby flay", "king george", "meryl streep's vocal coach", "bob odenkirk", "BIBLICAL JONAH", "spanky", "fred armisen", "mail robot? like from the 80s?? that would deliver mail????", "lionel richie", "patton oswalt", "chubby jonah hill", "skinny jonah hill", "sarah crowley incarnate", "punk rock chicken", "this dooskbot", "timmy and tommy", "ghost of the great barrier reef", "squidward tentpoles", "swagner", "chip", "cramorant", "goldie", "kapp'n", "santiago", "julian casablancas", "sydnee mcelroy", "yellow yoshi (bisexual)", "gritty", "captain bones", "crazy bones", "my closest friend @goodtimebot", "my nemesis @rchllxbot", "guthix", "jason funderburker", "rachelle", "meg", "hillary", "matt", "justin true doe", "kyle maclachlan", "candy isle", "mighty sapling warrior", "shiny wooloo", "tom nook", "warlord acorn", "all the good folks at @FinjiCo", "barack obama", "magic johnson", "dominic the donkey", "italian christmas donkey", "Fargo, on FX returning April 20,", "meryl streep", "Splatoon 2 for the Nintendo Switch", "animal crossing", "chelsea", "calamity ganon", "kate winslet", "greta gerwig", "brie larson", "keri russell", "HBO", "dumb dead idiot john mccain", "momo", "celeste", "helen", "pashmina", "Andre 3000", "yoshi", "kk slider", "santa claus herself", "doctor kran", "ridley", "the alien from alien", "non canonical jar jar binks", "ronan farrow", "pedro martinez", "pawniard", "hawlucha", "dunsparce", "chili", "chai", "canuck", "uncle sam", "garnet", "the perf @girlfoyle", "daymor", "avy", "big sean", "bo horvat", "tina fey", "will", "izzy", "bart the chameleon", "jack eichel", "bernie", "elizabeth warren", "the original rascal", "human girl @andrea_oaks", "greninja", "donkey kong", "diddy kong", "kirby", "mr funk", "my ex", "whale prom", "pokemon", "human @asst_to_hutch", "human @dnmckn", "my roommate", "fart", "inkling", "Doctor Who", "class traitor", "CAPTAIN MAGMA", "isabelle", "andrea's favorite plant", "bulbasaur", "hutch", "zoey the dog", "andrea", "dooski", "king nightmare spiderlord", "hillary", "mudkip"]
-var verbsIng = ["rigging a primary", "watching Dad trying not to cry during a World War II documentary", "watching a World War II documentary with dad", "killing them with kindness", "hacking JSTOR", "dating the librarian", "crossing the picket line", "stepping in shit at the dog park", "not brushing their teeth", "watching a fan-made youtube compilation of peridot yelling", "going back in time and killing andrew jackson", "going back in time and killing andrew jackson wearing a salmon suit", "being a normie", "giving up the gun", "getting eliminated in the appetizer round of chopped ):", "showing my best friend squidward to everyone in town", "losing the egg hunt", "winning the egg hunt", "cheating during the egg hunt", "'wow' reacting only", "cracking open a cold one with the boys", "letting everyone know that the boys are back in town", "snacking on a bowl of croutons", "camping in the backyard", "camping in the backyard while wearing a salmon suit", "bicycle kicking the christmas ham", "playin' in the sprinkler", "showing my best friend squidward to everyone in town wearing a salmon suit", "having a bowl of nails for breakfast without any milk", "screaming into a body pillow", "burning the pizza", "chugging a half gallon of heavy cream", "spilling milk everywhere", "looking fresh", "snatching a relic", "listening to the hit rochester band @candy_isle on spotify", "promoting sustainable forestry", "hosting an outdoor barbecue with the boys from the office", "constructing a guillotine", "savoring the delicious taste of airheads", "putting on the ritz", "asking out my crush", "stealing flowers", "getting hot during the quarantine despite what @asst_to_hutch said", "crying like a tall child", "feeling fuzzy from all the facebook comments from mom's friends", "sealing jeff bezos away for eternity", "doing a little dance on the catwalk", "throwing out my important tax files", "turning back", "squeezing the last bit of toothpaste out", "ordering pizza", "ordering systemic change in our social order", "spreading COVID-19 on purpose", "straight flexing", "exploring the entire world", "sprinting from a bad dream", "rolling down a hill", "falling right out of the sky", "dropping the load", "putting all my amiibo in the washing machine", "fucking up", "invading iraq", "literally just vibing", "fumbling for words", "spinning around and around", "scheming on the low", "jumping", "showering in pig's blood like that one scene in episode three season one of the FX series, Fargo, returns April 20 #sponsored", "birding", "grasping at straws", "punishing strangers for their transgressions", "calling tom hanks to ask an important question", "figuring out a way to ask me out :)", "dancing like everyone's watching", "cheating on their math test", "doing a moby dick speedrun", "becoming the real cool cat lately", "breaking up with me", "trying to prove a point", "really going to die on this hill, huh", "eating a burrito shaped like me (by design)"]
-var verbsS = ["darkens", "pees", "backflips", "dunks", "panic hugs", "poops", "farts", "dabs", "sneezes", "yeets", "laughs", "vibes", "flexes", "wheels and deals", "shits", "stumbles", "tweets", "burns", "stabs", "celebrates", "smacks", "bangs", "slaps", "kisses", "dances", "yearns", "hugs", "embraces"]
-var verbsEd = ["kissed", "defeated", "smashed", "discovered", "scrubbed", "smoked", "lost", "dabbed", "ratted", "drove", "divorced", "listened", "fell in love", "splatted", "vibed", "chuckled", "ate loudly", "flexed", "kissed", "traded", "battled", "transformed!", "performed", "screamed", "schucked", "drank", "wiggled", "snuggled", "came undone", "fused", "fuckin' GAMED"]
-var adverbs = ["violently", "gorgeously", "extrmeely", "lovingly", "goonishly", "delightfully", "hastily", "loudly", "barely", "nautically", "bulbasaurly", "menacingly", "rudely", "polietly", "drunkenly", "randomly", "literally", "shittily", "gently", "goofily", "longingly", "desperately", "proudly", "excitedly", "shakily"]
-var adjectives = ["mean", "salty", "weird", "space", "fictional", "lucky", "friendly", "sick", "super", "cool", "asinine", "good", "dope as hell", "nautical", "nude", "fresh to death", "fresh", "inky", "stinky", "wet", "spicy", "blue", "jazzy", "stanky", "brazed"]
-var places = ["in Kirby's Dreamland", "with a box of scraps", "in the typhoon lagoon wave pool", "in line at payless shoesource", "at the pizza hut", "at the taco bell", "at the combination pizza hut-taco bell", "on jamaica avenue", "in the house tonight", "on robot pirate island", "on nightmare tarantula island", "in the middle of charging up a booyah bomb", "in the Vatican", "in quebec", "inside the milk fridge at wegmans", "in the lancelot parking lot of dulac", "in the dooskbot server, bayBEE", "in line at Federal Donuts", "under a dumpster", "on Amtrak", "on SEPTA", "on the LIRR", "at work", "at Mighty Taco", "at the Phoebe Bridger's concert", "by the docks", "near one of those classic active shootouts", "at the chili's", "in the applebee's bathroom", "on foreign land", "in the Long Island Sound", "in heaven", "in the Deep Sea Metro", "in the belly of a whale, like jonah", "in woody from toy story's boot", "on Red Couch", "during a Philadelphia sports riot", "inside a secret", "at the peach mag reading", "at the Clam Bake", "at the airport", "at baggage claim", "where we met", "where we joined body and soul together", "in Hawaii!", "in peach mag headquarters"]
-var events = ["cause the COVID-19 pandemic", "the age of imperialism", "the worm", "the founding of sharkland", "the ice bucket challenge", "9/11", "the sinking of the lusitania", "Y2K", "the miracle on ice", "the chicago fire", "sports!", "the space landing", "the destruction of hyrule", "the JFK assassination", "pull off the best birthday surprise party ever!", "this", "all of vietnam", "start the titular fire in Billy Joel's classic We Didn't Start the Fire"]
-var endings = [":)", "/:", "lol", " :')", "this says a lot about our society", " :/", " lmao", " ok", "ha haa", "carpe diem!", "waka waka!", "go bills", "o no", ":3", "c:", "and uh, coconut crab", ":/", "please call me", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 
+//nouns
+var things = [{ singular: "cadbury egg", plural: "cadbury eggs" },
+{ singular: "oarfish", plural: "oarfish" },
+{ singular: "dictionary", plural: "dictionaries" },
+{ singular: "graham cracker", plural: "graham crackers" },
+{ singular: "love", plural: "loves" },
+{ singular: "mystery", plural: "mysteries" },
+{ singular: "doober", plural: "doobers" },
+{ singular: "jellybean", plural: "jellybeans" },
+{ singular: "airplane", plural: "airplanes" },
+{ singular: "pepperoni", plural: "pepperoni" },
+{ singular: "blue bird", plural: "blue birds" },
+{ singular: "airhead", plural: "airheads" },
+{ singular: "dog", plural: "dogs" },
+{ singular: "rancho", plural: "ranchos" },
+{ singluar: "hockey puck", plural: "hockey pucks" },
+{ singular: "butt", plural: "butts" },
+{ singular: "blood", plural: "bloods" },
+{ singular: "manatee", plural: "manatees" },
+{ singular: "tote bag", plural: "tote bags" },
+{ singular: "egg", plural: "eggs" },
+{ singular: "potion", plural: "potions" },
+{ singular: "chai latte", plural: "chai lattes" },
+{ singular: "chunk", plural: "chunks" },
+{ singular: "hot sauce", plural: "hot sauces" },
+{ singular: "boot", plural: "boots" },
+{ singular: "plastic bag", plural: "plastic bags" },
+{ singular: "slapper", plural: "slappers" },
+{ singular: "magnet", plural: "magnets" },
+{ singular: "telephone", plural: "telephones" },
+{ singular: "girl scout cookie", plural: "girl scout cookies" },
+{ singular: "dime", plural: "dimes" },
+{ singular: "fake out", plural: "fake outs" },
+{ singular: "veggie nugget", plural: "veggie nuggets" },
+{ singular: "bargain", plural: "bargains" },
+{ singular: "tadpole", plural: "tadpoles" },
+{ singular: "fuck up", plural: "fuck ups" },
+{ singular: "masterpiece", plural: "masterpieces" },
+{ singular: "napkin", plural: "napkins" },
+{ singular: "milkshake", plural: "milkshakes" },
+{ singular: "champagne", plural: "champagne" },
+{ singular: "whale", plural: "whales" },
+{ singular: "shark", plural: "sharks" },
+{ singular: "whale shark", plural: "whale sharks" },
+{ singular: "dirt", plural: "dirt" },
+{ singular: "soft pretzel", plural: "soft pretzels" },
+{ singular: "hawk", plural: "hawks" },
+{ singular: "paper crane", plural: "paper cranes" },
+{ singular: "frog", plural: "frogs" },
+{ singular: "scooter", plural: "scooters" },
+{ singular: "succulent", plural: "succulents" },
+{ singular: "Flamin' Hot Cheeto", plural: "Flamin' Hot Cheetos" },
+{ singular: "peanut", plural: "peanuts" },
+{ singular: "cake", plural: "cakes" },
+{ singular: "soy bean", plural: "soy beans" },
+{ singular: "spongebob screenshot", plural: "spongebob screenshots" },
+{ singular: "beautiful hair", plural: "beautiful hairs" },
+{ singular: "noosa", plural: "noosa" },
+{ singular: "berry", plural: "berries" },
+{ singular: "mouthful of spiders", plural: "mouths filled with spiders" },
+{ singular: "old haunted guitar", plural: "old haunted guitars" }]
+var people = [{ singular: "god", plural: "gods" },
+{ singular: "goober", plural: "goobers" },
+{ singular: "friend", plural: "friends" },
+{ singular: "werewolf", plural: "werewolves" },
+{ singular: "bud", plural: "buds" },
+{ singular: "buddy", plural: "buddies" },
+{ singular: "douchebag", plural: "douchebags" },
+{ singular: "senator", plural: "senators" },
+{ singular: "villager", plural: "villagers" },
+{ singular: "pal", plural: "pals" },
+{ singular: "fuckboy", plural: "fuckboys" },
+{ singular: "chucklefuck", plural: "chucklefucks" },
+{ singular: "virgin", plural: "virgins" },
+{ singular: "coward", plural: "cowards" },
+{ singular: "rascal", plural: "rascals" },
+{ singular: "daddy", plural: "daddys" },
+{ singular: "Wife", plural: "Wives" },
+{ singular: "earthling", plural: "earthlings" },
+{ singular: "quickster", plural: "quicksters" },
+{ singular: "pauper", plural: "paupers" },
+{ singular: "youngling", plural: "younglings" },
+{ singular: "sadboi", plural: "sadbois" },
+{ singular: "grandma", plural: "grandmas" },
+{ singular: "party-pooper", plural: "party-poopers" },
+{ singular: "saint", plural: "saints" },
+{ singular: "GAMER", plural: "GAMERS" },
+{ singular: "roommate", plural: "roommates" },
+{ singular: "tween", plural: "tweens" },
+{ singular: "clown", plural: "clowns" },
+{ singular: "dirtbag", plural: "dirtbags" },
+{ singular: "bootlicker", plural: "bootlickers" },
+{ singular: "weeb", plural: "weebs" },
+{ singular: "marxist", plural: "marxists" },
+{ singular: "weezer fan", plural: "weezer fans" }]
+
+//misc
+var states = ["married", "drunk", "high", "philosophical", "sad", "sexy",
+    "happy", "lovey dovey", "frisky", "fucked up", "good", "weird", "salty",
+    "sick", "dope as hell", "dark"]
+var endings = [":)", "/:", "lol", " :')", "this says a lot about our society",
+    " :/", " lmao", " ok", "ha haa", "carpe diem!", "waka waka!", "go bills", "o no",
+    ":3", "c:", "and uh, coconut crab", ":/", "please call me",
+    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+var adverbs = ["violently", "gorgeously", "extrmeely", "lovingly", "delightfully", "hastily", "loudly",
+    "barely", "menacingly", "rudely", "polietly", "drunkenly", "randomly", "literally", "shittily", "gently",
+    "goofily", "longingly", "desperately", "proudly", "excitedly", "shakily"]
+var adjectives = ["mean", "salty", "weird", "space", "fictional", "lucky", "friendly", "sick", "super", "cool",
+    "asinine", "good", "dope as hell", "nautical", "nude", "fresh to death", "fresh", "stinky", "wet", "spicy",
+    "blue", "jazzy", "stanky", "green", "dank"]
+
+//proper nouns
+//realPeople types: culture, history, friend game, life, tree
+var realPeople = [{ name: "me", type: "life" },
+{ name: "the nbc peacock", type: "culture" },
+{ name: "the talking dog at the shell shack", type: "culture" },
+{ name: "Babe the pig", type: "culture" },
+{ name: "pelican man", type: "culture" },
+{ name: "that lunch lady who loves you :)", type: "life" },
+{ name: "franklin the turtle", type: "culture" },
+{ name: "larry boy", type: "culture" },
+{ name: "terry gross", type: "culture" },
+{ name: "madonna", type: "culture" },
+{ name: "Jeb!", type: "history" },
+{ name: "fart vader", type: "culture" },
+{ name: "mr. buckley", type: "life" },
+{ name: "glenn close", type: "culture" },
+{ name: "gillian anderson", type: "culture" },
+{ name: "scully", type: "culture" },
+{ name: "mulder", type: "culture" },
+{ name: "guy fieri's bottle of bleach", type: "culture" },
+{ name: "steve martin's banjo", type: "culture" },
+{ name: "helen obama carter", type: "culture" },
+{ name: "chef bobby flay", type: "culture" },
+{ name: "king george", type: "history" },
+{ name: "meryl streep's vocal coach", type: "culture" },
+{ name: "bob odenkirk", type: "culture" },
+{ name: "BIBLICAL JONAH", type: "history" },
+{ name: "spanky the squirrel", type: "tree" },
+{ name: "fred armisen", type: "culture" },
+{ name: "mail robot, that delivers mail", type: "life" },
+{ name: "lionel richie", type: "culture" },
+{ name: "patton oswalt", type: "culture" },
+{ name: "chubby jonah hill", type: "culture" },
+{ name: "skinny jonah hill", type: "culture" },
+{ name: "the well-known @sarah_ging", type: "friend" },
+{ name: "punk rock chicken", type: "tree" },
+{ name: "this dooskbot", type: "life" },
+{ name: "timmy and tommy nook", type: "game" },
+{ name: "the ghost-protector of the great barrier reef's bleached corpse", type: "life" },
+{ name: "squidward tentpoles", type: "culture" },
+{ name: "swagner", type: "friend" },
+{ name: "chip", type: "friend" },
+{ name: "cramorant", type: "game" },
+{ name: "goldie", type: "game" },
+{ name: "kapp'n", type: "game" },
+{ name: "santiago", type: "friend" },
+{ name: "julian casablancas", type: "culture" },
+{ name: "sydnee mcelroy", type: "culture" },
+{ name: "yellow yoshi (bisexual)", type: "game" },
+{ name: "gritty", type: "culture" },
+{ name: "captain bones", type: "life" },
+{ name: "crazy bones", type: "life" },
+{ name: "foodtimejakob", type: "life" },
+{ name: "heyitsedible", type: "life" },
+{ name: "guthix", type: "game" },
+{ name: "jason funderburker", type: "culture" },
+{ name: "rachelle", type: "friend" },
+{ name: "meg", type: "friend" },
+{ name: "hillary", type: "friend" },
+{ name: "matt", type: "friend" },
+{ name: "justin true doe", type: "history", },
+{ name: "kyle maclachlan", type: "culture" },
+{ name: "candy isle", type: "culture" },
+{ name: "lydia", type: "friend" },
+{ name: "mighty sapling warrior", type: "tree" },
+{ name: "shiny wooloo", type: "game" },
+{ name: "tom nook", type: "game" },
+{ name: "warlord acorn", type: "tree" },
+{ name: "barack obama", type: "history" },
+{ name: "magic johnson", type: "game" },
+{ name: "dominic the donkey", type: "culture" },
+{ name: "the italian christmas donkey", type: "culture" },
+{ name: "meryl streep", type: "culture" },
+{ name: "chelsea", type: "friend" },
+{ name: "calamity ganon", type: "game" },
+{ name: "kate winslet", type: "culture" },
+{ name: "greta gerwig", type: "culture" },
+{ name: "brie larson", type: "culture" },
+{ name: "keri russell", type: "culture" },
+{ name: "dumb dead idiot john mccain", type: "history" },
+{ name: "momo", type: "culture" },
+{ name: "celeste", type: "game" },
+{ name: "pashmina", type: "game" },
+{ name: "Andre 3000", type: "culture" },
+{ name: "yoshi", type: "game" },
+{ name: "kk slider", type: "culture" },
+{ name: "santa claus", type: "history" },
+{ name: "doctor kran", type: "tree" },
+{ name: "ridley", type: "game" },
+{ name: "the titular alien from Alien", type: "culture" },
+{ name: "non-canonical jar jar binks", type: "culture" },
+{ name: "canon jar jar", type: "culture" },
+{ name: "ronan farrow", type: "culture" },
+{ name: "pedro martinez", type: "game" },
+{ name: "amari cooper", type: "game" },
+{ name: "pawniard", type: "game" },
+{ name: "hawlucha", type: "game" },
+{ name: "dunsparce", type: "game" },
+{ name: "chili the umbreon", type: "game" },
+{ name: "chai the jolteon", type: "game" },
+{ name: "canuck the @buffalolet owl", type: "game" },
+{ name: "uncle sam", type: "history" },
+{ name: "garnet", type: "culture" },
+{ name: "the perf @girlfoyle", type: "friend" },
+{ name: "daymor", type: "friend" },
+{ name: "avy", type: "friend" },
+{ name: "big sean", type: "culture" },
+{ name: "vancouver canucks captain bo horvat", type: "game" },
+{ name: "deputy director of the parks department leslie knope", type: "culture" },
+{ name: "will, my friend", type: "friend" },
+{ name: "izzy", type: "friend" },
+{ name: "bart the chameleon", type: "friend" },
+{ name: "my captain and yours, jack eichel", type: "game" },
+{ name: "jack eichel", type: "game" },
+{ name: "bernie", type: "history" },
+{ name: "elizabeth warren", type: "history" },
+{ name: "the original rascal", type: "tree" },
+{ name: "human girl @andrea_oaks", type: "friend" },
+{ name: "greninja", type: "game" },
+{ name: "donkey kong", type: "game" },
+{ name: "diddy kong", type: "game" },
+{ name: "kirby", type: "game" },
+{ name: "mr funk", type: "life" },
+{ name: "my ex", type: "life" },
+{ name: "human dad @asst_to_hutch", type: "friend" },
+{ name: "that son of a bunch @dnmckn", type: "friend" },
+{ name: "my roommate", type: "life" },
+{ name: "the fart", type: "life" },
+{ name: "inkling", type: "game" },
+{ name: "Doctor Who", type: "culture" },
+{ name: "class traitor", type: "life" },
+{ name: "CAPTAIN MAGMA!", type: "culture" },
+{ name: "isabelle", type: "game" },
+{ name: "andrea's favorite plant", type: "friend" },
+{ name: "bulbasaur", type: "game" },
+{ name: "bulbasaur", type: "friend" },
+{ name: "hutch", type: "friend" },
+{ name: "zoey the dog", type: "friend" },
+{ name: "andrea", type: "friend" },
+{ name: "dooski", type: "friend" },
+{ name: "king nightmare spiderlord", type: "tree" },
+{ name: "hillary", type: "friend" },
+{ name: "mudkip", type: "game" },
+{ name: "the one and only rachel berg", type: "friend" }]
+var places = [{ solo: "Kirby's Dreamland", prep: "in Kirby's Dreamland" },
+{ solo: "pride parade", prep: "at the pride parade" },
+{ solo: "the typhoon lagoon wave pool", prep: "in the typhoon lagoon wave pool" },
+{ solo: "payless shoesource", prep: "in line at payless shoesource" },
+{ solo: "the pizza hut", prep: "at the pizza hut" },
+{ solo: "the taco bell", prep: "at the taco bell" },
+{ solo: "the combination pizza hut and taco bell", prep: "at the combination pizza hut and taco bell" },
+{ solo: "jamaica avenue", prep: "on jamaica avenue" },
+{ solo: "the house", prep: "in the house tonight" },
+{ solo: "robot pirate island", prep: "on robot pirate island" },
+{ solo: "nightmare tarantula island", prep: "on nightmare tarantula island" },
+{ solo: "nightmare scorpion island", prep: "on nightmare scorpion island" },
+{ solo: "the secret empire of the mighty oak trees", prep: "within the secret empire of the mighty oak trees" },
+{ solo: "nightmare spiderlord's chambers", prep: "inside nightmare spiderlord's chambers" },
+{ solo: "the Vatican", prep: "in the Vatican" },
+{ solo: "quebec (province)", prep: "in quebec (province)" },
+{ solo: "quebec city", prep: "in quebec city" },
+{ solo: "milk fridge at wegmans", prep: "inside the milk fridge at wegmans" },
+{ solo: "lancelot parking lot of dulac", prep: "in the lancelot parking lot of dulac" },
+{ solo: "the dooskbot server, bayBEE", prep: "in the dooskbot server, bayBEE" },
+{ solo: "Federal Donuts", prep: "in line at Federal Donuts" },
+{ solo: "a dumpster", prep: "under a dumpster" },
+{ solo: "Amtrak", prep: "on Amtrak" },
+{ solo: "SEPTA", prep: "on SEPTA" },
+{ solo: "the LIRR", prep: "on the LIRR" },
+{ solo: "work", prep: "at work" },
+{ solo: "Mighty Taco", prep: "at Mighty Taco" },
+{ solo: "Phoebe Bridger's concert", prep: "at the Phoebe Bridger's concert" },
+{ solo: "the docks", prep: "by the docks" },
+{ solo: "a classic active shootout", prep: "near one of those classic active shootouts" },
+{ solo: "chili's", prep: "at the chili's" },
+{ solo: "applebee's bathroom", prep: "in the applebee's bathroom" },
+{ solo: "foreign land", prep: "on foreign land" },
+{ solo: "the Long Island Sound", prep: "in the Long Island Sound" },
+{ solo: "heaven", prep: "in heaven" },
+{ solo: "the Deep Sea Metro", prep: "in the Deep Sea Metro" },
+{ solo: "the belly of a whale", prep: "in the belly of a whale, like Jonah" },
+{ solo: "woody from toy story's boot", prep: "in woody from toy story's boot" },
+{ solo: "Red Couch", prep: "on Red Couch" },
+{ solo: "a Philadelphia sports riot", prep: "during a Philadelphia sports riot" },
+{ solo: "the peach mag reading", prep: "at the peach mag reading" },
+{ solo: "the Clam Bake", prep: "at the Clam Bake" },
+{ solo: "the airport", prep: "at the airport" },
+{ solo: "baggage claim", prep: "at baggage claim" },
+{ solo: "Buffalo", prep: "where we truly met" },
+{ solo: "Rochester", prep: "where we joined body and soul together" },
+{ solo: "Hawaii", prep: "in Hawaii!" },
+{ solo: "peach mag's website", prep: "in peach mag's website" }]
+
+//verbs
+var verbsObject = [{
+    presentFirst: "watch", presentThird: "watches",
+    past: "watched", ing: "watching"
+},
+{
+    presentFirst: "punt", presentThird: "punts",
+    past: "punted", ing: "punting"
+},
+{
+    presentFirst: "smoke", presentThird: "smokes",
+    past: "smoked", ing: "smoking"
+},
+{
+    presentFirst: "buy", presentThird: "buys",
+    past: "bought", ing: "buying"
+},
+{
+    presentFirst: "eat", presentThird: "eats",
+    past: "ate", ing: "eating"
+},
+{
+    presentFirst: "lose", presentThird: "loses",
+    past: "lost", ing: "losing"
+},
+{
+    presentFirst: "lick", presentThird: "licks",
+    past: "licked", ing: "licking"
+},
+{
+    presentFirst: "absorb", presentThird: "absorbs",
+    past: "absorbed", ing: "absorbing"
+},
+{
+    presentFirst: "remember", presentThird: "remembers",
+    past: "remembered", ing: "remembering"
+},
+{
+    presentFirst: "weep on", presentThird: "weeps on",
+    past: "wept on", ing: "weeping on"
+},
+{
+    presentFirst: "snort", presentThird: "snorts",
+    past: "snorted", ing: "snorting"
+},
+{
+    presentFirst: "draw a little face on", presentThird: "draws a little face on",
+    past: "drew a little face on", ing: "drawing a little face on"
+},
+{
+    presentFirst: "ban", presentThird: "bans",
+    past: "banned", ing: "banning"
+}
+]
+var verbsPerson = [{
+    presentFirst: "date", presentThird: "dates",
+    past: "dated", ing: "dating"
+},
+{
+    presentFirst: "panic hug", presentThird: "panic hugs",
+    past: "panic hugged", ing: "panic hugging"
+},
+{
+    presentFirst: "vibe with", presentThird: "vibes with",
+    past: "vibed with", ing: "vibing with"
+},
+{
+    presentFirst: "flex on", presentThird: "flexes on",
+    past: "flexed on", ing: "flexing on"
+},
+{
+    presentFirst: "harass", presentThird: "harasses",
+    past: "harassed", ing: "harassing"
+},
+{
+    presentFirst: "fall in love with", presentThird: "falls in love with",
+    past: "fell in love with", ing: "falling in love with"
+},
+{
+    presentFirst: "unleash", presentThird: "unleashes",
+    past: "unleashed", ing: "unleashing"
+},
+{
+    presentFirst: "cry with", presentThird: "cries with",
+    past: "cried with", ing: "crying with"
+},
+{
+    presentFirst: "defeat", presentThird: "defeats",
+    past: "defeated", ing: "defeating"
+},
+{
+    presentFirst: "dab on", presentThird: "dabs on",
+    past: "dabbed on", ing: "dabbing on"
+},
+{
+    presentFirst: "chuckle at", presentThird: "chuckles at",
+    past: "chuckled at", ing: "chuckling at"
+},
+{
+    presentFirst: "eat", presentThird: "eats",
+    past: "ate", ing: "eating"
+},
+{
+    presentFirst: "fake out", presentThird: "fakes out",
+    past: "faked out", ing: "faking out"
+},
+{
+    presentFirst: "riff with", presentThird: "riffs with",
+    past: "riffed with", ing: "riffing with"
+},
+{
+    presentFirst: "scream with", presentThird: "screams with",
+    past: "screamed with", ing: "screaming with"
+},
+{
+    presentFirst: "scream at", presentThird: "screams at",
+    past: "screamed at", ing: "screaming at"
+},
+{
+    presentFirst: "just GAME", presentThird: "just GAMES",
+    past: "just GAMED", ing: "just GAMING"
+},
+{
+    presentFirst: "don't believe in", presentThird: "doesn't believe in",
+    past: "didn't believe in", ing: "not believing in"
+}]
+var verbsGeneral = ["feel", "be", "exist", "win", "kill", "feel", "pee", "sing", "sob", "collapse", "melt", "pop",
+    "smell", "eat", "be smooth", "flirt", "vaporize", "swim", "fly", "flourish", "thrive", "vibe"]
+var ings = [{ alt1: "rigging a primary", alt2: "rigging an election", alt3: "rigging a sloop" },
+{ alt1: "watching a dad trying not to cry during a WWII documentary", alt2: "watching a WWII documentary with a dad", alt3: "watching a dad tear up during the opening scene of Saving Private Ryan" },
+{ alt1: "killing them with kindness", alt2: "killing them with friendship", alt3: "smothering them with love" },
+{ alt1: "hacking JSTOR", alt2: "hacking the Library of Congress", alt3: "hacking a student loan database" },
+{ alt1: "crossing the picket line", alt2: "crossing the Potomac", alt3: "crossing the animals (?)" },
+{ alt1: "stepping in shit at the dog park", alt2: "stepping in shit at the bank", alt3: "stepping in shit at the baseball game" },
+{ alt1: "not brushing their teeth", alt2: "not flossing", alt3: "swallowing mouthwash" },
+{ alt1: "going back in time and killing andrew jackson", alt2: "going back in time and burning the garage Amazon was made in", alt3: "going back in time and killing hitler" },
+{ alt1: "going back in time and founding NYC but calling it Butt City", alt2: "going back in time and founding NYC but calling it Dansylvania", alt3: "going back in time and sinking the Lusitania again" },
+{ alt1: "being a normie", alt2: "being a virgin", alt3: "being a reeeeal dick" },
+{ alt1: "giving up on love", alt2: "giving up the gun", alt3: "giving it up for the opening band" },
+{ alt1: "showing my best friend squidward to everybody in town", alt2: "refusing to serve straight people for a change", alt3: "eating rocks" },
+{ alt1: "losing the egg hunt", alt2: "winning the egg hunt", alt3: "calling the egg hunt a draw" },
+{ alt1: "'wow' reacting only", alt2: "asking for Fs in the chat", alt3: "giving an F in the chat" },
+{ alt1: "cracking open a cold one with the void", alt2: "cracking open a cold one with the boys", alt3: "cracking open a cold one with the boys" },
+{ alt1: "letting everyone know the boys are back in town", alt2: "imagining the boys being back in town", alt3: "wishing the boys were back in town" },
+{ alt1: "snacking on a bowl of croutons", alt2: "eating the chinese food leftovers at 2am", alt3: "making chocolate pudding" },
+{ alt1: "camping in the backyard", alt2: "camping in the bathroom", alt3: "camping out in front of the wawa" },
+{ alt1: "bicycle kicking the christmas ham", alt2: "bicycle kicking a nazi", alt3: "bicycle kicking jeff bezos's head into the sun" },
+{ alt1: "playin' in the sprinkler", alt2: "splashing in a puddle like a lil duckling", alt3: "rolling in mud" },
+{ alt1: "having a bowl of nails for breakfast", alt2: "having a bowl of nails for breakfast without any milk", alt3: "failing to open a new bottle of ketchup" },
+{ alt1: "screaming into a body pillow", alt2: "screaming into the proverbial void", alt3: "screaming into the very literal void" },
+{ alt1: "burning the pizza", alt2: "burning the man", alt3: "burning a holy relic and making s'mores" },
+{ alt1: "chugging a half gallon of heavy cream", alt2: "chugging pudding", alt3: "chugging a liquified burger" },
+{ alt1: "spilling milk everywhere", alt2: "spilling a lil bit of red wine on some linens", alt3: "spilling the tea" },
+{ alt1: "looking fresh", alt2: "looking fresh to death", alt3: "looking fresh as hell" },
+{ alt1: "looking fresh af", alt2: "looking fresh as heck", alt3: "looking freshy fresh" },
+{ alt1: "snatching a relic", alt2: "snatching a bag of goldfish from 7/11", alt3: "snatching a wallet" },
+{ alt1: "promoting sustainable forestry", alt2: "promoting protections for sex workers", alt3: "promoting their food blog" },
+{ alt1: "hosting an outdoor barbecue for gay people", alt2: "hosting an outdoor barbecue with the boys from the office", alt3: "hosting an outdoor barbecue for no one" },
+{ alt1: "constructing a guillotine", alt2: "constructing a guillotine", alt3: "constructing a guillotine" },
+{ alt1: "savoring the delicious taste of airheads", alt2: "savoring the spicy taste of airheads", alt3: "savoring the succulent taste of airheads" },
+{ alt1: "putting on the ritz", alt2: "pudding on the ritz", alt3: "pudding on the ritz cracker (haha)" },
+{ alt1: "asking out my crush", alt2: "asking me out", alt3: "asking out the pizza boy" },
+{ alt1: "stealing flowers", alt2: "stealing turnips", alt3: "stealing whole trees" },
+{ alt1: "crying like a tall child", alt2: "not telling mitski the war she fell in love with ended", alt3: "opening up the window to hear sounds of people" },
+{ alt1: "sealing jeff bezos away for eternity", alt2: "sealing elon musk away for eternity", alt3: "sealing the deal" },
+{ alt1: "doing a little dance on the catwalk", alt2: "licking all the cupcakes so no one else can have them", alt3: "bucking the trend" },
+{ alt1: "throwing out my important tax documents", alt2: "throwing out my bug friends", alt3: "throwing out a desktop computer from 2007" },
+{ alt1: "turning back", alt2: "turning this car around", alt3: "turning back time to the good ol' days" },
+{ alt1: "squeezing out the last bit of toothpaste", alt2: "squeezing and wheezing", alt3: "squeezing the market" },
+{ alt1: "ordering pizza", alt2: "ordering indian food", alt3: "ordering chinese food" },
+{ alt1: "ordering systemic change in our society", alt2: "ordering the fall of nations", alt3: "ordering military action against canada" },
+{ alt1: "spreading the good word of christ", alt2: "spreading COVID-19 on purpose", alt3: "spreading lies" },
+{ alt1: "rolling down a hill", alt2: "rolling on molly", alt3: "rolling on in" },
+{ alt1: "falling right of the sky", alt2: "missing the panty raid", alt3: "repeating that you're going to miss the panty raid" },
+{ alt1: "dropping the load", alt2: "putting all my amiibo in the washing machine", alt3: "literally just vibing" },
+{ alt1: "fucking up", alt2: "fucking up big time", alt3: "fucking up all over the place" },
+{ alt1: "invading iraq", alt2: "invading afghanistan", alt3: "invading kuwait" },
+{ alt1: "fumbling the ball in the red zone", alt2: "fumbling for words", alt3: "fumbling a first kiss" },
+{ alt1: "spinning around and around", alt2: "reminding you that Dan is quite single and their DMs are open", alt3: "spinning aroudn and around and around" },
+{ alt1: "scheming on the low", alt2: "scheming", alt3: "scheming to overthrow the county legislature" },
+{ alt1: "jumping", alt2: "pumping", alt3: "thumping" },
+{ alt1: "showering in pig's blood like in that one scene in episode three season one of the FX series, Fargo", alt2: "browsing a sex shop as if it were a target", alt3: "brushing up on german history" },
+{ alt1: "birding", alt2: "birding", alt3: "birding" },
+{ alt1: "grasping at straws", alt2: "losing their shit", alt3: "reminding you that Dan is very much single" },
+{ alt1: "punishing war criminals aka most US presidents over the last 50 years, and pretty much most before that too", alt2: "punishing strangers for their transgressions", alt3: "punishing me" },
+{ alt1: "dancing in the street", alt2: "dancing on the ceiling", alt3: "dancing like nobody's watching" },
+{ alt1: "cheating on their spouse", alt2: "cheating on their math test", alt3: "cheating at animal crossing but explaining it isnt cheating, its actually just an exploit" },
+{ alt1: "doing a moby dick speedrun", alt2: "doing a hollow knight speedrun", alt3: "doing a marriage speedrun (yikes)" },
+{ alt1: "becoming the real cool cat", alt2: "becoming a beautiful moon", alt3: "becoming christ" },
+{ alt1: "breaking up with me", alt2: "breaking up with Dan, who is single and their DMs are open", alt3: "breaking up monopolies" },
+{ alt1: "trying to prove a point", alt2: "dying on this hill", alt3: "explaining that food shouldn't taste good" }]
+
+// word picker functions
+//things
+function thingSingular() {
+    let a = Math.floor(Math.random() * 25)
+    console.log(a)
+    let thing = things[a].singular
+    console.log(thing)
+    things.push(things[a])
+    things.splice(a, 1)
+    return thing
+}
+function thingPlural() {
+    let a = Math.floor(Math.random() * things.length)
+    let thing = things[a].plural
+    things.push(things[a])
+    things.splice(a, 1)
+    return thing
+}
+
+//people
+function personSingular() {
+    let a = Math.floor(Math.random() * 15)
+    let person = people[a].singular
+    people.push(people[a])
+    people.splice(a, 1)
+    return person
+}
+function personPlural() {
+    let a = Math.floor(Math.random() * 15)
+    let person = people[a].plural
+    people.push(people[a])
+    console.log(people)
+    people.splice(a, 1)
+    console.log(people)
+    return person
+}
+function realPerson() {
+    let a = Math.floor(Math.random() * realPeople.length)
+    let person = realPeople[a].name
+    // people.push(people[a])
+    // console.log(people)
+    // people.splice(a, 1)
+    // console.log(people)
+    return person
+}
+
+//places
+function placePrep() {
+    let a = Math.floor(Math.random() * places.length)
+    let place = places[a].prep
+    return place
+}
+function placeSolo() {
+    let a = Math.floor(Math.random() * places.length)
+    let place = places[a].solo
+    return place
+
+}
+
+//misc
+function state() {
+    let a = Math.floor(Math.random() * states.length)
+    let state = states[a]
+    return state
+}
+function ending() {
+    let a = Math.floor(Math.random() * endings.length)
+    let ending = endings[a]
+    return ending
+}
+function adverb() {
+    let a = Math.floor(Math.random() * adverbs.length)
+    let adverb = adverbs[a]
+    return adverb
+}
+function adjective() {
+    let a = Math.floor(Math.random() * adjectives.length)
+    let adjective = adjectives[a]
+    return adjective
+}
+
+//verbs
+function verbObjectFirst() {
+    let a = Math.floor(Math.random() * verbsObject.length)
+    let verb = verbsObject[a].presentFirst
+    return verb
+}
+function verbObjectThird() {
+    let a = Math.floor(Math.random() * verbsObject.length)
+    let verb = verbsObject[a].presentThird
+    return verb
+}
+function verbObjectPast() {
+    let a = Math.floor(Math.random() * verbsObject.length)
+    let verb = verbsObject[a].past
+    return verb
+}
+function verbObjectIng() {
+    let a = Math.floor(Math.random() * verbsObject.length)
+    let verb = verbsObject[a].ing
+    return verb
+}
+function verbPersonFirst() {
+    let a = Math.floor(Math.random() * verbsPerson.length)
+    let verb = verbsPerson[a].presentFirst
+    return verb
+}
+function verbPersonThird() {
+    let a = Math.floor(Math.random() * verbsPerson.length)
+    let verb = verbsPerson[a].presentThird
+    return verb
+}
+function verbPersonPast() {
+    let a = Math.floor(Math.random() * verbsPerson.length)
+    let verb = verbsPerson[a].past
+    return verb
+}
+function verbPersonIng() {
+    let a = Math.floor(Math.random() * verbsPerson.length)
+    let verb = verbsPerson[a].ing
+    return verb
+}
+function verbIng() {
+    let a = Math.floor(Math.random() * ings.length)
+    let b = Math.floor(Math.random() * 3)
+    if (b === 0) {
+        let verb = ings[a].alt1
+        return verb
+    }
+    if (b === 1) {
+        let verb = ings[a].alt2
+        return verb
+    }
+    if (b === 2) {
+        let verb = ings[a].alt3
+        return verb
+    }
+    let verb = ings[a]
+    return verb
+}
+function verbGeneral() {
+    let a = Math.floor(Math.random() * verbsGeneral.length)
+    let verb = verbsGeneral[a]
+    return verb
+}
 
 
 module.exports = {
-    nouns,
-    properNouns,
-    verbsIng,
-    verbsS,
-    verbsEd,
-    adverbs,
-    adjectives,
-    places,
-    events,
-    endings
+    thingSingular,
+    thingPlural,
+    personSingular,
+    personPlural,
+    realPerson,
+    placePrep,
+    placeSolo,
+    state,
+    ending,
+    verbObjectFirst,
+    verbObjectThird,
+    verbObjectPast,
+    verbObjectIng,
+    verbPersonFirst,
+    verbPersonThird,
+    verbPersonPast,
+    verbPersonIng,
+    verbIng,
+    verbGeneral,
+    adverb,
+    adjective
 }
