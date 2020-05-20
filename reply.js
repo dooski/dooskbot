@@ -123,14 +123,14 @@ function reply(tweet) {
     } else if (happen === 1) {
         let person = dictionary.personPlural()
         let verbEd = dictionary.verbPersonPast()
-        let reply = "@" + name + " yeah, i've never really " + verbEd + " with " + person + " much anyway"
+        let reply = "@" + name + " yeah, i've never really " + verbEd + " " + person + " much anyway"
         var params = {
             status: reply,
             in_reply_to_status_id: nameID
         };
         sendReply(params)
     } else if (happen === 2) {
-        let ending = dictionary.ending()
+        let ending = dictionary.endingForSure()
         let reply = "@" + name + " " + ending
         console.log(reply)
         var params = {

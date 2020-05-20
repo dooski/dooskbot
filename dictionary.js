@@ -579,6 +579,11 @@ function ending() {
     let ending = endings[a]
     return ending
 }
+function endingForSure() {
+    let a = Math.floor(Math.random() * 14)
+    let ending = endings[a]
+    return ending
+}
 function adverb() {
     let a = Math.floor(Math.random() * adverbs.length)
     let adverb = adverbs[a]
@@ -721,6 +726,7 @@ module.exports = {
     placeSolo,
     state,
     ending,
+    endingForSure,
     verbObjectFirst,
     verbObjectThird,
     verbObjectPast,
