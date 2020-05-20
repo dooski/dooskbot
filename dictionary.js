@@ -258,47 +258,47 @@ var realPeople = [{ name: "me", type: "life" },
 { name: "the one and only rachel berg", type: "friend" }]
 var places = [{ solo: "Kirby's Dreamland", prep: "in Kirby's Dreamland" },
 { solo: "pride parade", prep: "at the pride parade" },
-{ solo: "the typhoon lagoon wave pool", prep: "in the typhoon lagoon wave pool" },
+{ solo: "typhoon lagoon wave pool", prep: "in the typhoon lagoon wave pool" },
 { solo: "payless shoesource", prep: "in line at payless shoesource" },
-{ solo: "the pizza hut", prep: "at the pizza hut" },
-{ solo: "the taco bell", prep: "at the taco bell" },
-{ solo: "the combination pizza hut and taco bell", prep: "at the combination pizza hut and taco bell" },
+{ solo: "pizza hut", prep: "at the pizza hut" },
+{ solo: "taco bell", prep: "at the taco bell" },
+{ solo: "combination pizza hut and taco bell", prep: "at the combination pizza hut and taco bell" },
 { solo: "jamaica avenue", prep: "on jamaica avenue" },
-{ solo: "the house", prep: "in the house tonight" },
+{ solo: "house", prep: "in the house tonight" },
 { solo: "robot pirate island", prep: "on robot pirate island" },
 { solo: "nightmare tarantula island", prep: "on nightmare tarantula island" },
 { solo: "nightmare scorpion island", prep: "on nightmare scorpion island" },
-{ solo: "the secret empire of the mighty oak trees", prep: "within the secret empire of the mighty oak trees" },
+{ solo: "secret empire of the mighty oak trees", prep: "within the secret empire of the mighty oak trees" },
 { solo: "nightmare spiderlord's chambers", prep: "inside nightmare spiderlord's chambers" },
-{ solo: "the Vatican", prep: "in the Vatican" },
+{ solo: "Vatican", prep: "in the Vatican" },
 { solo: "quebec (province)", prep: "in quebec (province)" },
 { solo: "quebec city", prep: "in quebec city" },
 { solo: "milk fridge at wegmans", prep: "inside the milk fridge at wegmans" },
 { solo: "lancelot parking lot of dulac", prep: "in the lancelot parking lot of dulac" },
-{ solo: "the dooskbot server, bayBEE", prep: "in the dooskbot server, bayBEE" },
+{ solo: "dooskbot server, bayBEE", prep: "in the dooskbot server, bayBEE" },
 { solo: "Federal Donuts", prep: "in line at Federal Donuts" },
-{ solo: "a dumpster", prep: "under a dumpster" },
-{ solo: "Amtrak", prep: "on Amtrak" },
-{ solo: "SEPTA", prep: "on SEPTA" },
-{ solo: "the LIRR", prep: "on the LIRR" },
+{ solo: "dumpster", prep: "under a dumpster" },
+{ solo: "Amtrak train", prep: "on Amtrak" },
+{ solo: "SEPTA train", prep: "on SEPTA" },
+{ solo: "LIRR train", prep: "on the LIRR" },
 { solo: "work", prep: "at work" },
 { solo: "Mighty Taco", prep: "at Mighty Taco" },
 { solo: "Phoebe Bridger's concert", prep: "at the Phoebe Bridger's concert" },
-{ solo: "the docks", prep: "by the docks" },
-{ solo: "a classic active shootout", prep: "near one of those classic active shootouts" },
+{ solo: "dock", prep: "by the docks" },
+{ solo: "classic active shootout", prep: "near one of those classic active shootouts" },
 { solo: "chili's", prep: "at the chili's" },
 { solo: "applebee's bathroom", prep: "in the applebee's bathroom" },
 { solo: "foreign land", prep: "on foreign land" },
-{ solo: "the Long Island Sound", prep: "in the Long Island Sound" },
+{ solo: "Long Island Sound", prep: "in the Long Island Sound" },
 { solo: "heaven", prep: "in heaven" },
-{ solo: "the Deep Sea Metro", prep: "in the Deep Sea Metro" },
-{ solo: "the belly of a whale", prep: "in the belly of a whale, like Jonah" },
+{ solo: "Deep Sea Metro", prep: "in the Deep Sea Metro" },
+{ solo: "belly of a whale", prep: "in the belly of a whale, like Jonah" },
 { solo: "woody from toy story's boot", prep: "in woody from toy story's boot" },
 { solo: "Red Couch", prep: "on Red Couch" },
-{ solo: "a Philadelphia sports riot", prep: "during a Philadelphia sports riot" },
-{ solo: "the peach mag reading", prep: "at the peach mag reading" },
-{ solo: "the Clam Bake", prep: "at the Clam Bake" },
-{ solo: "the airport", prep: "at the airport" },
+{ solo: "Philadelphia sports riot", prep: "during a Philadelphia sports riot" },
+{ solo: "peach mag reading", prep: "at the peach mag reading" },
+{ solo: "Clam Bake", prep: "at the Clam Bake" },
+{ solo: "airport", prep: "at the airport" },
 { solo: "baggage claim", prep: "at baggage claim" },
 { solo: "Buffalo", prep: "where we truly met" },
 { solo: "Rochester", prep: "where we joined body and soul together" },
@@ -500,19 +500,13 @@ var ings = [{ alt1: "rigging a primary", alt2: "rigging an election", alt3: "rig
 // word picker functions
 //things
 function thingSingular() {
-    let a = Math.floor(Math.random() * 25)
-    console.log(a)
+    let a = Math.floor(Math.random() * things.length)
     let thing = things[a].singular
-    console.log(thing)
-    things.push(things[a])
-    things.splice(a, 1)
     return thing
 }
 function thingPlural() {
     let a = Math.floor(Math.random() * things.length)
     let thing = things[a].plural
-    things.push(things[a])
-    things.splice(a, 1)
     return thing
 }
 
@@ -520,26 +514,16 @@ function thingPlural() {
 function personSingular() {
     let a = Math.floor(Math.random() * 15)
     let person = people[a].singular
-    people.push(people[a])
-    people.splice(a, 1)
     return person
 }
 function personPlural() {
     let a = Math.floor(Math.random() * 15)
     let person = people[a].plural
-    people.push(people[a])
-    console.log(people)
-    people.splice(a, 1)
-    console.log(people)
     return person
 }
 function realPerson() {
     let a = Math.floor(Math.random() * realPeople.length)
     let person = realPeople[a].name
-    // people.push(people[a])
-    // console.log(people)
-    // people.splice(a, 1)
-    // console.log(people)
     return person
 }
 
@@ -576,6 +560,61 @@ function adjective() {
     let a = Math.floor(Math.random() * adjectives.length)
     let adjective = adjectives[a]
     return adjective
+}
+function lemongrab() {
+    let L = Math.floor(Math.random() * 3)
+    if (L === 0) {
+        let a = Math.floor(Math.random() * 6)
+        if (a === 0) {
+            let reply = "all your fault!!!!"
+            return reply
+        } else if (a === 1) {
+            let reply = "ALL YOUR FAULT!!!"
+            return reply
+        } else if (a === 2) {
+            let reply = "this is all YOUR fault!!"
+            return reply
+        } else if (a === 3) {
+            let reply = "THIS IS ALL YOUR FAULT!!"
+            return reply
+        } else if (a === 4) {
+            let reply = "this is all your fault!!!!!!"
+            return reply
+        } else if (a === 5) {
+            let reply = "all your faULT!!!!!!!!"
+            return reply
+        } return reply
+    } else if (L === 1) {
+        let a = Math.floor(Math.random() * 5)
+        if (a === 0) {
+            let reply = "you made me!!!"
+            return reply
+        } else if (a === 1) {
+            let reply = "YOU MADE MEEEE!!!!!"
+            return reply
+        } else if (a === 2) {
+            let reply = "YOU MADE ME!!"
+            return reply
+        } else if (a === 3) {
+            let reply = "YOOOOOOU MADE MEE!!!!!"
+            return reply
+        } else if (a === 4) {
+            let reply = "yooooooou maade MEE!!"
+            return reply
+        } return reply
+    } else if (L === 2) {
+        let a = Math.floor(Math.random() * 3)
+        if (a === 0) {
+            let reply = "YOU MADE ME LIKE THIS, ITS ALL YOUR FAULT!!!!"
+            return reply
+        } else if (a === 1) {
+            let reply = "i am alone and you made me like this"
+            return reply
+        } else if (a === 2) {
+            let reply = "i am ALONE and you made me like this!!!!!"
+            return reply
+        } return reply
+    }
 }
 
 //verbs
@@ -665,5 +704,18 @@ module.exports = {
     verbIng,
     verbGeneral,
     adverb,
-    adjective
+    adjective,
+    lemongrab,
+    things,
+    people,
+    states,
+    endings,
+    adverbs,
+    adjectives,
+    realPeople,
+    places,
+    verbsObject,
+    verbsPerson,
+    verbsGeneral,
+    ings
 }

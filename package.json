@@ -2,9 +2,9 @@
   "name": "dooskbot",
   "version": "0.1.8",
   "description": "DOOSKBOT\r v 0.1.8\r Author: Dan McKeon",
-  "main": "tweet.js",
+  "main": "dooskbot.js",
   "scripts": {
-    "start": "node tweet.js",
+    "start": "node dooskbot.js",
     "test": "node test.js",
     "check": "node check.js"
   },
@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "log4js": "^6.2.1",
     "twit": "^2.2.11"
   },
   "devDependencies": {},

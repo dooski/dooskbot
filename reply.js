@@ -1,9 +1,6 @@
 //calls dictionary.js for all word objects
 const dictionary = require('./dictionary')
-//calls lemongrab for yelling
-const lemongrab = require('./lemongrab')
-//calls the Twitter API
-const Twit = require('twit');
+const Twit = require('Twit')
 //key
 const key = require('./key')
 
@@ -16,9 +13,6 @@ let T = key.T
 //     access_token: process.env.TOKEN,
 //     access_token_secret: process.env.TOKEN_SECRET
 // })
-
-
-var start = stream()
 
 function stream() {
     T.get('account/verify_credentials', {
@@ -63,11 +57,9 @@ function reply(tweet) {
     let you = tweet.text.includes(" you ")
     let hillary = tweet.user.screen_name.includes("asst_to_hutch")
     let dooski = tweet.user.screen_name.includes("dnmckn")
-    console.log(dooski)
     // let dooskbeta = tweet.user.screen_name.includes("dooskbeta")
     if (happen >= 6 && dooski === true) {
-        let reply = "@dnmckn " + lemongrab.lemongrab()
-        console.log(reply)
+        let reply = "@dnmckn " + dictionary.lemongrab()
         var params = {
             status: reply,
             in_reply_to_status_id: nameID
@@ -140,6 +132,7 @@ function reply(tweet) {
     } else if (happen === 2) {
         let ending = dictionary.ending()
         let reply = "@" + name + " " + ending
+        console.log(reply)
         var params = {
             status: reply,
             in_reply_to_status_id: nameID
@@ -158,7 +151,6 @@ function reply(tweet) {
 }
 
 function sendReply(params) {
-    console.log(params)
     T.post('statuses/update', params, function (err, data, response) {
         if (err !== undefined) {
             console.log(err);
@@ -167,3 +159,7 @@ function sendReply(params) {
         }
     })
 };
+
+module.exports = {
+    stream
+}
