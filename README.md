@@ -19,7 +19,6 @@ b. Planned development
 - Expanded reply forms.
 - Mood generation based on real-world factors to influence tweet content and frequency.
 
-
 3. CURRENT ISSUES
 - Dooskbot replies are very general currently with very little input from the tweet it is replying to. Future development should be focused on more complex analysis of tweets.
 

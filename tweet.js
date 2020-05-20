@@ -198,7 +198,7 @@ function tweet() {
     if (t === 17) {
         let verbEd = dictionary.verbObjectPast()
         let thing = dictionary.thingSingular()
-        let verb = dictionary.generalVerb()
+        let verb = dictionary.verbGeneral()
         let tweet = verbEd + " " + thing + " just to " + verb + " again";
         return tweet
     }

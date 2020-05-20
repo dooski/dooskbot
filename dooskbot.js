@@ -2,8 +2,8 @@
 const makeTweet = require('./tweet')
 //calls the reply functionality
 const reply = require('./reply')
-//API key
-const key = require('./key')
+// //API key
+// const key = require('./key')
 //logging
 var log4js = require('log4js');
 var logger = log4js.getLogger();
@@ -15,15 +15,15 @@ log4js.configure({
 //server
 const express = require('express');
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
-let T = key.T
-// let T = new Twit({
-//     consumer_key: process.env.KEY,
-//     consumer_secret: process.env.KEY_SECRET,
-//     access_token: process.env.TOKEN,
-//     access_token_secret: process.env.TOKEN_SECRET
-// })
+// let T = key.T
+let T = new Twit({
+    consumer_key: process.env.KEY,
+    consumer_secret: process.env.KEY_SECRET,
+    access_token: process.env.TOKEN,
+    access_token_secret: process.env.TOKEN_SECRET
+})
 
 // TWEETS
 function go() {

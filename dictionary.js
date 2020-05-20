@@ -61,10 +61,39 @@ var things = [{ singular: "cadbury egg", plural: "cadbury eggs" },
 { singular: "noosa", plural: "noosa" },
 { singular: "berry", plural: "berries" },
 { singular: "mouthful of spiders", plural: "mouths filled with spiders" },
-{ singular: "old haunted guitar", plural: "old haunted guitars" }]
+{ singular: "old haunted guitar", plural: "old haunted guitars" },
+{ singular: "chapstick", plural: "chapsticks" },
+{ singular: "thing", plural: "things" },
+{ singular: "spider", plural: "spiders" },
+{ singular: "dirty joke", plural: "dirty jokes" },
+{ singular: "payment", plural: "payments" },
+{ singular: "subway car", plural: "subway cars" },
+{ singular: "album", plural: "albums" },
+{ singular: "EP", plural: "EPs" },
+{ singular: "kaiser roll", plural: "kaiser rolls" },
+{ singular: "picnic basket", plural: "picnic baskets" },
+{ singular: "varsity sweater", plural: "varsity sweaters" },
+{ singular: "funko pop", plural: "funko pops" },
+{ singular: "wet blanket", plural: "wet blankets" },
+{ singular: "gear", plural: "gears" },
+{ singular: "family sword", plural: "family swords" },
+{ singular: "falsehood", plural: "falsehoods" },
+{ singular: "theory", plural: "theories" },
+{ singular: "mouse", plural: "mice" },
+{ singular: "soup", plural: "soups" },
+{ singular: "garlic knot", plural: "garlic knots" },
+{ singular: "knot", plural: "knots" },
+{ singular: "cuppa coffee", plural: "cuppsa coffee" },
+{ singular: "pepper", plural: "peppers" },
+{ singular: "sprig of mint", plural: "sprigs of mint" },
+{ singular: "three-pointer", plural: "tree-pointers" },
+{ singular: "personal pan pizza", plural: "personal pan pizzas" },
+{ singular: "kitty cat", plural: "kitty cats" }
+]
 var people = [{ singular: "god", plural: "gods" },
 { singular: "goober", plural: "goobers" },
 { singular: "friend", plural: "friends" },
+{ singular: "dirty scavenger", plural: "dirty scavengers" },
 { singular: "werewolf", plural: "werewolves" },
 { singular: "bud", plural: "buds" },
 { singular: "buddy", plural: "buddies" },
@@ -103,17 +132,17 @@ var states = ["married", "drunk", "high", "philosophical", "sad", "sexy",
     "sick", "dope as hell", "dark"]
 var endings = [":)", "/:", "lol", " :')", "this says a lot about our society",
     " :/", " lmao", " ok", "ha haa", "carpe diem!", "waka waka!", "go bills", "o no",
-    ":3", "c:", "and uh, coconut crab", ":/", "please call me",
+    ":3", "c:", "and thems the breaks!", ":/", "please call me",
     "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
 var adverbs = ["violently", "gorgeously", "extrmeely", "lovingly", "delightfully", "hastily", "loudly",
     "barely", "menacingly", "rudely", "polietly", "drunkenly", "randomly", "literally", "shittily", "gently",
     "goofily", "longingly", "desperately", "proudly", "excitedly", "shakily"]
-var adjectives = ["mean", "salty", "weird", "space", "fictional", "lucky", "friendly", "sick", "super", "cool",
+var adjectives = ["mean", "salty", "weird", "classic", "fictional", "lucky", "friendly", "sick", "super", "cool",
     "asinine", "good", "dope as hell", "nautical", "nude", "fresh to death", "fresh", "stinky", "wet", "spicy",
     "blue", "jazzy", "stanky", "green", "dank"]
 
 //proper nouns
-//realPeople types: culture, history, friend game, life, tree
+//realPeople types: culture, history, friend, game, life, tree
 var realPeople = [{ name: "me", type: "life" },
 { name: "the nbc peacock", type: "culture" },
 { name: "the talking dog at the shell shack", type: "culture" },
@@ -537,7 +566,6 @@ function placeSolo() {
     let a = Math.floor(Math.random() * places.length)
     let place = places[a].solo
     return place
-
 }
 
 //misc

@@ -2,17 +2,17 @@
 const dictionary = require('./dictionary')
 const Twit = require('Twit')
 //key
-const key = require('./key')
+// const key = require('./key')
 
-let T = key.T
+// let T = key.T
 
-// // key for login
-// let T = new Twit({
-//     consumer_key: process.env.KEY,
-//     consumer_secret: process.env.KEY_SECRET,
-//     access_token: process.env.TOKEN,
-//     access_token_secret: process.env.TOKEN_SECRET
-// })
+// key for login
+let T = new Twit({
+    consumer_key: process.env.KEY,
+    consumer_secret: process.env.KEY_SECRET,
+    access_token: process.env.TOKEN,
+    access_token_secret: process.env.TOKEN_SECRET
+})
 
 function stream() {
     T.get('account/verify_credentials', {
@@ -47,18 +47,18 @@ function reply(tweet) {
     let what = tweet.text.includes(" what ")
     let who = tweet.text.includes(" who ")
     let how = tweet.text.includes(" how ")
-    let when = tweet.text.includes(" how ")
+    let when = tweet.text.includes(" when ")
     let why = tweet.text.includes(" why ")
     let should = tweet.text.includes(" should i ")
     let should2 = tweet.text.includes(" should I ")
-    let nothing = tweet.text.includes("this is nothing")
     let question = tweet.text.includes("?")
+    let nothing = tweet.text.includes("this is nothing")
     let dooskbot = tweet.text.includes(" dooskbot")
     let you = tweet.text.includes(" you ")
     let hillary = tweet.user.screen_name.includes("asst_to_hutch")
     let dooski = tweet.user.screen_name.includes("dnmckn")
     // let dooskbeta = tweet.user.screen_name.includes("dooskbeta")
-    if (happen >= 6 && dooski === true) {
+    if (happen > 6 && dooski === true) {
         let reply = "@dnmckn " + dictionary.lemongrab()
         var params = {
             status: reply,
