@@ -30,6 +30,7 @@ let T = new Twit({
 function go() {
     //runs tweet.js to create tweet
     let tweet = makeTweet.tweet();
+    // let tweet = "I have been u p d a t e d to version 0.2. bit.ly/2ZqIAmv"
     //sends out returned tweet
     T.post('statuses/update', {
         status: tweet

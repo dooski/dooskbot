@@ -27,7 +27,7 @@ function stream() {
             throw err
         }
         // listens for mentions of dooskbot
-        var stream = T.stream('statuses/filter', { track: ['@dooskbeta'] });
+        var stream = T.stream('statuses/filter', { track: ['@dooskbot'] });
         stream.on('tweet', tweetEvent);
         console.log("listening... waiting .. . . ..")
         // when dooskbot is mentioned:
@@ -105,7 +105,7 @@ function reply(tweet) {
         (happen >= 3 && you === true) {
         let ending = dictionary.ending()
         let original = tweet.text.replace("you", "*YOU*")
-        original = original.replace("@dooskbeta", "")
+        original = original.replace("@dooskbot", "")
         let reply = "no, @" + name + ", " + original + " " + ending
         var params = {
             status: reply,
