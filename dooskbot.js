@@ -4,6 +4,7 @@ const makeTweet = require('./tweet')
 const reply = require('./reply')
 // //API key
 // const key = require('./key')
+const Twit = require('twit')
 //logging
 var log4js = require('log4js');
 var logger = log4js.getLogger();

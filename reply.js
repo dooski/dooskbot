@@ -1,6 +1,6 @@
 //calls dictionary.js for all word objects
 const dictionary = require('./dictionary')
-const Twit = require('Twit')
+const Twit = require('twit')
 //key
 // const key = require('./key')
 
