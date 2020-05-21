@@ -67,7 +67,7 @@ function reply(tweet) {
         sendReply(params)
     } else if (hillary === true && happen >= 6) {
         let thing = dictionary.thingSingular()
-        let place = dictionary.placesPrep()
+        let place = dictionary.placePrep()
         let reply = "@" + name + " why dont u give hutch a " + thing + " " + place;
         var params = {
             status: reply,
