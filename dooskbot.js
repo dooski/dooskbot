@@ -41,6 +41,6 @@ function go() {
 // Timing for functional parts of DOOSKBOT, runs on server
 app.listen(PORT, function () {
     setTimeout(go, 2000)
-    // setTimeout(reply.stream, 1000)
+    setTimeout(reply.stream, 1000)
     setInterval(go, 3600000)
 })

@@ -1,12 +1,7 @@
 //calls dictionary.js for all word objects
 const dictionary = require('./dictionary')
 const Twit = require('twit')
-//key
-// const key = require('./key')
 
-// let T = key.T
-
-// key for login
 let T = new Twit({
     consumer_key: process.env.KEY,
     consumer_secret: process.env.KEY_SECRET,
@@ -58,7 +53,7 @@ function reply(tweet) {
     let hillary = tweet.user.screen_name.includes("asst_to_hutch")
     let dooski = tweet.user.screen_name.includes("dnmckn")
     // let dooskbeta = tweet.user.screen_name.includes("dooskbeta")
-    if (happen > 6 && dooski === true) {
+    if (happen > 4 && dooski === true) {
         let reply = "@dnmckn " + dictionary.lemongrab()
         var params = {
             status: reply,

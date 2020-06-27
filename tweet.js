@@ -3,14 +3,14 @@ const dictionary = require('./dictionary')
 //creates tweet to return to tweet.js
 //tweet generation function
 function tweet() {
-    // generates a random number between 0 and 18 to pick one 
-    // of the 18 tweet formats
-    let t = Math.floor(Math.random() * 19);
+    // generates a random number between 0 and 22 to pick one 
+    // of the 23 tweet formats
+    let t = zp(23)
 
     //shiny check; generates a number between 0 annd 69; if shiny = 69
     //and t = 4, dooskbot returns a shiny tweet!
-    let shiny = Math.floor(Math.random() * 70)
-    if (shiny === 69) {
+    let shiny = zp(60)
+    if (shiny === 4) {
         console.log("shiny!")
     }
 
@@ -51,21 +51,21 @@ function tweet() {
 
     // 4. ITS ABOUT
     if (t === 3) {
-        let about = Math.floor(Math.random() * 2);
+        let z = zp(3);
         //uses plural noun
-        if (about === 0) {
+        if (z === 0) {
             let thing = dictionary.thingPlural()
             let tweet = "its about the " + thing + ", send tweet";
             return tweet
         }
         //uses plural person
-        if (about === 1) {
+        if (z === 1) {
             let people = dictionary.personPlural()
             let tweet = "its about all the " + people + ", send tweet";
             return tweet
         }
         //uses a place
-        if (about === 2) {
+        if (z === 2) {
             let place = dictionary.placeSolo()
             let tweet = "its about the " + place + ", send tweet";
             return tweet
@@ -75,10 +75,10 @@ function tweet() {
     // 5. ___ SAID ____ RIGHTS
     if (t === 4 && shiny !== 69) {
         let person = dictionary.realPerson()
-        // let rights = ["trans rights", "trans visibility", "its my turn!", "gay rights", "bi visibility", "queer visibility", "dont worry :)"];
-        // let b = Math.floor(Math.random() * rights.length);
-        // let right = rights[b]
-        let tweet = person + " said acab"
+        let rights = ["trans rights", "trans visibility", "its my turn!", "gay rights", "bi visibility", "queer visibility", "dont worry :)", "acab"];
+        let z = zp(rights.length)
+        let right = rights[z]
+        let tweet = person + " said " + right
         return tweet
     }
 
@@ -95,7 +95,7 @@ function tweet() {
         let person1 = dictionary.realPerson()
         let person2 = dictionary.realPerson()
         let ending = dictionary.ending()
-        let tweet = "i ship " + person1 + " and " + person2 + ", " + ending;
+        let tweet = "i ship " + person1 + " and " + person2 + " " + ending;
         return tweet
     }
 
@@ -187,7 +187,7 @@ function tweet() {
 
     // 17. MOM CAN YOU PICK ME UP
     if (t === 16) {
-        let verbIng = dictionary.ing()
+        let verbIng = dictionary.verbIng()
         let properNoun = dictionary.realPerson()
         let ending = dictionary.ending()
         let tweet = "mom can you pick me up? " + properNoun + " is " + verbIng + " " + ending;
@@ -211,8 +211,78 @@ function tweet() {
         let tweet = "just remembered when me and " + person + " got " + state + " " + place + " " + ending
         return tweet
     }
+
+    // 20. i need to
+    if (t === 19) {
+        let ing = dictionary.verbIng()
+        let adverb = dictionary.adverb()
+        let ending = dictionary.ending()
+        let tweet = "had a dream i was " + ing + " but, like, " + adverb + "???? " + ending
+        return tweet
+    }
+
+    // 21. i smell / i lost / i want / i should
+    if (t === 20 || t === 21 || t === 22) {
+        let thing = dictionary.thingSingular()
+        let ending = dictionary.ending()
+        let things = dictionary.thingPlural()
+        let person = dictionary.realPerson()
+        let state = dictionary.state()
+        let verbPerson = dictionary.verbPersonFirst()
+        let ing = dictionary.verbIng()
+        let generalPerson = dictionary.personSingular()
+        let verbGeneral = dictionary.verbGeneral()
+        let z = zp(11)
+        if (z === 0) {
+            let tweet = "i smell one " + thing + " " + ending
+            return tweet
+        }
+        if (z === 1) {
+            let tweet = "i smell several " + things + " " + ending
+            return tweet
+        }
+        if (z === 2) {
+            let tweet = "i smell " + person + " " + ending
+            return tweet
+        }
+        if (z === 3) {
+            let tweet = "i lost my " + thing + " to " + person + " " + ending
+            return tweet
+        }
+        if (z === 4) {
+            let tweet = "i'm " + state + " and i want " + things + "!! " + ending
+            return tweet
+        }
+        if (z === 5) {
+            let tweet = "i want " + person + " to " + verbPerson + " me " + ending
+            return tweet
+        }
+        if (z === 6) {
+            let tweet = "imagine wanting " + person + " to have " + things + " " + ending
+            return tweet
+        }
+        if (z === 7) {
+            let tweet = "should i start " + ing + " with " + person + "?"
+            return tweet
+        }
+        if (z === 8) {
+            let tweet = "you should stop " + ing + " before " + person + " finds out " + ending
+            return tweet
+        }
+        if (z === 9) {
+            let tweet = "if you see my " + generalPerson + " " + ing + ", you should uhhh ... " + verbGeneral + " " + ending
+            return tweet
+        }
+        if (z === 10) {
+            let tweet = "i need to " + verbGeneral + " with a " + thing + " more often"
+            return tweet
+        }
+    }
 }
 
+function zp(z) {
+    return Math.floor(Math.random() * z)
+}
 
 module.exports = {
     tweet
