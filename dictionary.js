@@ -571,12 +571,12 @@ function thingPlural() {
 
 //people
 function personSingular() {
-    let a = Math.floor(Math.random() * personSingular.length)
+    let a = Math.floor(Math.random() * people.length)
     let person = people[a].singular
     return person
 }
 function personPlural() {
-    let a = Math.floor(Math.random() * personPlural.length)
+    let a = Math.floor(Math.random() * people.length)
     let person = people[a].plural
     return person
 }

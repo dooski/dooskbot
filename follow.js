@@ -1,14 +1,9 @@
 //calls dictionary.js for all word objects
 const dictionary = require('./dictionary')
 //calls the Twitter API
-const Twit = require('twit');
+const dooskbot = require('./dooskbot');
 
-let T = new Twit({
-    consumer_key: process.env.KEY,
-    consumer_secret: process.env.KEY_SECRET,
-    access_token: process.env.TOKEN,
-    access_token_secret: process.env.TOKEN_SECRET
-})
+let T = dooskbot.T
 
 
 T.get('account/verify_credentials', {

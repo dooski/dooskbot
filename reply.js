@@ -1,13 +1,29 @@
 //calls dictionary.js for all word objects
 const dictionary = require('./dictionary')
+const dooskbot = require('./dooskbot')
 const Twit = require('twit')
 
-let T = new Twit({
-    consumer_key: process.env.KEY,
-    consumer_secret: process.env.KEY_SECRET,
-    access_token: process.env.TOKEN,
-    access_token_secret: process.env.TOKEN_SECRET
-})
+let beta = false
+var T = betaCheck()
+function betaCheck() {
+    if (beta === true) {
+        let T = new Twit({
+            consumer_key: process.env.KEYBETA,
+            consumer_secret: process.env.KEYBETA_SECRET,
+            access_token: process.env.TOKENBETA,
+            access_token_secret: process.env.TOKENBETA_SECRET
+        })
+        return T
+    } else {
+        let T = new Twit({
+            consumer_key: process.env.KEY,
+            consumer_secret: process.env.KEY_SECRET,
+            access_token: process.env.TOKEN,
+            access_token_secret: process.env.TOKEN_SECRET
+        })
+        return T
+    }
+}
 
 function stream() {
     T.get('account/verify_credentials', {
