@@ -1,7 +1,7 @@
 {
   "name": "dooskbot",
-  "version": "0.1.8",
-  "description": "DOOSKBOT\r v 0.1.8\r Author: Dan McKeon",
+  "version": "0.2.0",
+  "description": "DOOSKBOT\r v 0.2\r Author: Dan McKeon",
   "main": "dooskbot.js",
   "scripts": {
     "start": "node dooskbot.js",

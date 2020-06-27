@@ -75,10 +75,10 @@ function tweet() {
     // 5. ___ SAID ____ RIGHTS
     if (t === 4 && shiny !== 69) {
         let person = dictionary.realPerson()
-        let rights = ["trans rights", "trans visibility", "its my turn!", "gay rights", "bi visibility", "queer visibility", "dont worry :)"];
-        let b = Math.floor(Math.random() * rights.length);
-        let right = rights[b]
-        let tweet = person + " said " + right;
+        // let rights = ["trans rights", "trans visibility", "its my turn!", "gay rights", "bi visibility", "queer visibility", "dont worry :)"];
+        // let b = Math.floor(Math.random() * rights.length);
+        // let right = rights[b]
+        let tweet = person + " said acab"
         return tweet
     }
 

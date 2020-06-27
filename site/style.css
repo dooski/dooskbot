@@ -1,0 +1,50 @@
+
+body{
+    background-color:black;
+    color:white;
+    font-family: "Determination Mono";
+    font-size: 32px;
+  }
+
+  #dialogue-box{
+    background-color: black;
+    border : solid ;
+    border-width: 5px;
+    border-color: white;
+    width: 700px;
+    height: 300px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 10% 
+  }
+
+  #text{
+    position: absolute;
+    left:30px;
+    top: 0px;
+  }
+
+  #text-box{
+    position: relative;
+    left: 150px;
+    width: 520px;
+  }
+
+  #star{
+    position: relative;
+    left: 18px;
+    display: inline;
+  }
+  
+  @font-face {
+    font-family: 'Determination Mono';
+    src: url('fonts/webfonts_determinationmonoweb-webfont.eot');
+    src: url('fonts/webfonts_determinationmonoweb-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/webfonts_determinationmonoweb-webfont.woff2') format('woff2'),
+         url('fonts/webfonts_determinationmonoweb-webfont.woff') format('woff'),
+         url('fonts/webfonts_determinationmonoweb-webfont.ttf') format('truetype'),
+         url('fonts/webfonts_determinationmonoweb-webfont.svg#determination_mono_webregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+  }

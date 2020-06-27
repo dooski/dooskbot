@@ -5,31 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Dooskbot Test Kitchen</title>
-  <link rel="stylesheet" href="beta/style.css" />
+  <title>METTADOOSK</title>
+  <link rel="stylesheet" href="site/style.css" />
 </head>
 
 <body>
-  <div class="wrapper">
-    <header>
-      <h1>Dooskbot Test Kitchen</h1>
-    </header>
-    <div class="card">
-      <div class="card-header">
-        <h2></h2>
-      </div>
-      <div class="card-body">
-        <textarea readonly id="password" placeholder="o tweet?" aria-label="Generated Tweet"></textarea>
-      </div>
-      <div class="card-footer">
-        <button id="generate" class="btn">The Button</button>
-      </div>
+  <div id='dialogue-box'>
+    <div id='star'>*</div>
+    <div id="text-box">
+      <p id="app"></p>
     </div>
-    <p class="version">v. 0.1.8</p>
   </div>
-  <script src="dictionary.js"></script>
-  <script src="testkitchen.js"></script>
-  <script src="beta/script.js"></script>
+
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script src="site/js/words.js"></script>
+  <script src="site/js/script.js"></script>
 </body>
 
 </html>

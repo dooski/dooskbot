@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "got": "^7.1.0",
-    "moment": "^2.24.0",
+    "moment": "^2.26.0",
     "request": "^2.81.0",
     "twit": "^2.2.11"
   },

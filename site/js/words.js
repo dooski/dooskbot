@@ -1,6 +1,216 @@
-// DICTIONARY: nouns are singular common nouns; properNouns are singular proper nouns; verbsIng are gerund phrases
-// verbsEd are past tense verbs; adverbs are adverbs ending in -ly; places are prepositional phrases mostly giving location
+//tweet generation function
+function tweet() {
+    // generates a random number between 0 and 18 to pick one 
+    // of the 18 tweet formats
+    let t = Math.floor(Math.random() * 19);
 
+    //shiny check; generates a number between 0 and 69; if shiny = 69
+    //and t = 4, dooskbot returns a shiny tweet!
+    let shiny = Math.floor(Math.random() * 70)
+    if (shiny === 69) {
+        console.log("shiny!")
+    }
+
+    //shiny tweet generation
+    if (shiny === 69 && t === 4) {
+        let person = realPersona()
+        let tweet = "* a shiny " + person + " appears! *";
+        return tweet
+    }
+
+    // standard tweet formats (not shiny)
+    // 1. DONT TEXT
+    if (t === 0) {
+        let person = realPersona()
+        let verbIng = verbInga()
+        let ending = endinga()
+        let tweet = person + " is " + verbIng + ", dont text " + ending;
+        return tweet
+    }
+
+    // 2. DOES SOMETHING
+    if (t === 1) {
+        let adverb = adverba()
+        let verb = verbPersonPast()
+        let person = realPersona()
+        let place = placePrepa()
+        let tweet = "*" + adverb + " " + verb + " " + person + " " + place + "*";
+        return tweet
+    }
+
+    // 3. AS A TREAT
+    if (t === 2) {
+        let person = realPersona();
+        let thing = thingSingulara()
+        let tweet = person + " can have little a " + thing + ", as a treat";
+        return tweet
+    }
+
+    // 4. ITS ABOUT
+    if (t === 3) {
+        let about = Math.floor(Math.random() * 2);
+        //uses plural noun
+        if (about === 0) {
+            let thing = thingPlurala()
+            let tweet = "its about the " + thing + ", send tweet";
+            return tweet
+        }
+        //uses plural person
+        if (about === 1) {
+            let people = personPlurala()
+            let tweet = "its about all the " + people + ", send tweet";
+            return tweet
+        }
+        //uses a place
+        if (about === 2) {
+            let place = placeSoloa()
+            let tweet = "its about the " + place + ", send tweet";
+            return tweet
+        }
+    }
+
+    // 5. ___ SAID ____ RIGHTS
+    if (t === 4 && shiny !== 69) {
+        let person = realPersona()
+        // let rights = ["trans rights", "trans visibility", "its my turn!", "gay rights", "bi visibility", "queer visibility", "dont worry :)"];
+        // let b = Math.floor(Math.random() * rights.length);
+        // let right = rights[b]
+        let tweet = person + " said acab"
+        return tweet
+    }
+
+    // 6. THE POWER OF
+    if (t === 5) {
+        let adjective = adjectivea()
+        let thing = thingPlurala()
+        let tweet = "the power of " + adjective + " " + thing + " shines within you";
+        return tweet
+    }
+
+    // 7. SHIPPING
+    if (t === 6) {
+        let person1 = realPersona()
+        let person2 = realPersona()
+        let ending = endinga()
+        let tweet = "i ship " + person1 + " and " + person2 + ", " + ending;
+        return tweet
+    }
+
+    // 8. ALL blank KNOWS IS
+    if (t === 7) {
+        let person = realPersona()
+        let thing = thingSingulara()
+        let people = personPlurala()
+        let ing = verbInga()
+        let ending = endinga()
+        let tweet = "all " + person + " knows is " + thing + ", " + people + " and " + ing + " " + ending;
+        return tweet
+    }
+
+    // 9. IN MY TOWN????
+    if (t === 8) {
+        let thing = thingPlurala()
+        let adjective = adjectivea()
+        let place = placeSoloa()
+        let tweet = thing + "? in this " + adjective + " " + place + "???";
+        return tweet
+    }
+
+    // 10. WHAT IF WE
+    if (t === 9) {
+        let verb = verbPersonPast()
+        let person = realPersona()
+        let place = placePrepa()
+        let tweet = "what if we " + verb + " " + person + " " + place + "? haha just kidding............ unless?";
+        return tweet
+    }
+
+    // 11. MAYBE THE REAL
+    if (t === 10) {
+        let thing = thingSingulara()
+        let things = thingPlurala()
+        let verb = verbObjectPast()
+        let ending = endinga()
+        let tweet = "maybe the real " + thing + " was all the " + things + " we " + verb + " along the way " + ending;
+        return tweet
+    }
+
+    // 12. FILLS YOU WITH DETERMINATION
+    if (t === 11) {
+        let person = realPersona()
+        let adverb = adverba()
+        let verb = verbInga()
+        let tweet = "the sight of " + person + " " + adverb + " " + verb + "; it fills me with determination"
+        return tweet
+    }
+
+    // 13. HOT TAKE
+    if (t === 12) {
+        let state = statea()
+        let adjective = adjectivea()
+        let realPerson = realPersona()
+        let ending = endinga()
+        let tweet = "not to get all " + state + ", but " + realPerson + " is not really " + adjective + " " + ending;
+        return tweet
+    }
+
+    // 14.life is just
+    if (t === 13) {
+        let verb1 = verbPersonFirst();
+        let people = personPlurala();
+        let ing = verbInga();
+        let verb2 = verbObjectFirst();
+        let thing = thingSingulara()
+        let tweet = "life is really just *" + verb1 + " " + people + "* *" + ing + "* *" + verb2 + " " + thing + "*"
+        return tweet
+    }
+
+    // 15. PUTTING ME ON BLAST
+    if (t === 14) {
+        let person = realPersona()
+        let ing = verbInga()
+        let ending = endinga()
+        let tweet = "why is " + person + " putting me on blast for " + ing + " ???? " + ending;
+        return tweet
+    }
+
+    // 16. SAME AS IT EVER WAS
+    if (t === 15) {
+        let ing = verbInga()
+        let place = placePrepa()
+        let tweet = "and you may find yourself " + ing + " " + place;
+        return tweet
+    }
+
+    // 17. MOM CAN YOU PICK ME UP
+    if (t === 16) {
+        let verbIng = verbInga()
+        let properNoun = realPersona()
+        let ending = endinga()
+        let tweet = "mom can you pick me up? " + properNoun + " is " + verbIng + " " + ending;
+        return tweet
+    }
+
+    // 18. VERBED NOUN just to VERBS again
+    if (t === 17) {
+        let verbEd = verbObjectPast()
+        let thing = thingSingulara()
+        let verb = verbGeneral()
+        let tweet = verbEd + " " + thing + " just to " + verb + " again";
+        return tweet
+    }
+    // 19. just remembered
+    if (t === 18) {
+        let person = realPersona()
+        let state = statea()
+        let place = placePrepa()
+        let ending = endinga()
+        let tweet = "just remembered when me and " + person + " got " + state + " " + place + " " + ending
+        return tweet
+    }
+}
+
+//dictionary
 //nouns
 var things = [{ singular: "stolen egg", plural: "stolen eggs" },
 { singular: "oarfish", plural: "oarfish" },
@@ -530,53 +740,53 @@ var ings = [{ alt1: "rigging a primary", alt2: "rigging an election", alt3: "rig
 
 // word picker functions
 //things
-function thingSingular() {
+function thingSingulara() {
     let a = Math.floor(Math.random() * things.length)
     let thing = things[a].singular
     return thing
 }
-function thingPlural() {
+function thingPlurala() {
     let a = Math.floor(Math.random() * things.length)
     let thing = things[a].plural
     return thing
 }
 
 //people
-function personSingular() {
+function personSingulara() {
     let a = Math.floor(Math.random() * 15)
     let person = people[a].singular
     return person
 }
-function personPlural() {
+function personPlurala() {
     let a = Math.floor(Math.random() * 15)
     let person = people[a].plural
     return person
 }
-function realPerson() {
+function realPersona() {
     let a = Math.floor(Math.random() * realPeople.length)
     let person = realPeople[a].name
     return person
 }
 
 //places
-function placePrep() {
+function placePrepa() {
     let a = Math.floor(Math.random() * places.length)
     let place = places[a].prep
     return place
 }
-function placeSolo() {
+function placeSoloa() {
     let a = Math.floor(Math.random() * places.length)
     let place = places[a].solo
     return place
 }
 
 //misc
-function state() {
+function statea() {
     let a = Math.floor(Math.random() * states.length)
     let state = states[a]
     return state
 }
-function ending() {
+function endinga() {
     let a = Math.floor(Math.random() * endings.length)
     let ending = endings[a]
     return ending
@@ -586,12 +796,12 @@ function endingForSure() {
     let ending = endings[a]
     return ending
 }
-function adverb() {
+function adverba() {
     let a = Math.floor(Math.random() * adverbs.length)
     let adverb = adverbs[a]
     return adverb
 }
-function adjective() {
+function adjectivea() {
     let a = Math.floor(Math.random() * adjectives.length)
     let adjective = adjectives[a]
     return adjective
@@ -693,7 +903,7 @@ function verbPersonIng() {
     let verb = verbsPerson[a].ing
     return verb
 }
-function verbIng() {
+function verbInga() {
     let a = Math.floor(Math.random() * ings.length)
     let b = Math.floor(Math.random() * 3)
     if (b === 0) {
@@ -715,43 +925,4 @@ function verbGeneral() {
     let a = Math.floor(Math.random() * verbsGeneral.length)
     let verb = verbsGeneral[a]
     return verb
-}
-
-
-module.exports = {
-    thingSingular,
-    thingPlural,
-    personSingular,
-    personPlural,
-    realPerson,
-    placePrep,
-    placeSolo,
-    state,
-    ending,
-    endingForSure,
-    verbObjectFirst,
-    verbObjectThird,
-    verbObjectPast,
-    verbObjectIng,
-    verbPersonFirst,
-    verbPersonThird,
-    verbPersonPast,
-    verbPersonIng,
-    verbIng,
-    verbGeneral,
-    adverb,
-    adjective,
-    lemongrab,
-    things,
-    people,
-    states,
-    endings,
-    adverbs,
-    adjectives,
-    realPeople,
-    places,
-    verbsObject,
-    verbsPerson,
-    verbsGeneral,
-    ings
 }
