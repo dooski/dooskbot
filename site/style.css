@@ -12,21 +12,21 @@ body{
     border-width: 5px;
     border-color: white;
     width: 700px;
-    height: 300px;
+    height: 350px;
     margin-left:auto;
-    margin-right:auto;
-    margin-top: 10% 
+    margin-right:auto; 
+    margin-top: 100px
   }
 
   #text{
     position: absolute;
-    left:30px;
+    left:170px;
     top: 0px;
   }
 
   #text-box{
     position: relative;
-    left: 150px;
+    left: 50px;
     width: 520px;
   }
 
@@ -34,6 +34,10 @@ body{
     position: relative;
     left: 18px;
     display: inline;
+  }
+
+  #bot{
+    position: realtive;
   }
   
   @font-face {
@@ -47,4 +51,64 @@ body{
     font-weight: normal;
     font-style: normal;
 
+  }
+
+  @media only screen and (max-width: 900px) {
+body{
+  font-size: 24px
+}
+
+    #dialogue-box{
+      width: 500px;
+      height: 500px;
+      margin-left:auto;
+      margin-right:auto; 
+      margin-top: 100px
+    }
+  
+    #text{
+      position: absolute;
+      left:100px;
+      top: 0px;
+    }
+  
+    #text-box{
+      position: relative;
+      left: 30px;
+      width: 300px;
+    }
+  
+    #star{
+      position: relative;
+      left: 10px;
+      display: inline;
+    }
+  }
+
+  @media only screen and (max-width: 700px) {
+    body{
+      font-size: 20px
+    }
+    #dialogue-box{
+      width: 350px;
+      height: 350px;
+    }
+  
+    #text{
+      position: absolute;
+      left: 120px;
+      top: 0px;
+    }
+  
+    #text-box{
+      position: relative;
+      left: 2px;
+      width: 250px;
+    }
+  
+    #star{
+      position: relative;
+      left: 4px;
+      display: inline;
+    }
   }

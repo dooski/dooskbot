@@ -112,7 +112,7 @@ function tweet() {
         let thing = thingPlurala()
         let adjective = adjectivea()
         let place = placeSoloa()
-        let tweet = thing + "? in this " + adjective + " " + place + "???";
+        let tweet = thing + "? in this " + adjective + " " + place + "? ? ? ";
         return tweet
     }
 
@@ -121,7 +121,7 @@ function tweet() {
         let verb = verbPersonPast()
         let person = realPersona()
         let place = placePrepa()
-        let tweet = "what if we " + verb + " " + person + " " + place + "? haha just kidding............ unless?";
+        let tweet = "what if we " + verb + " " + person + " " + place + "? haha just kidding . . . . . . . unless?";
         return tweet
     }
 

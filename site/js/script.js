@@ -1,4 +1,5 @@
-const app = document.getElementById("app")
+const text = document.getElementById("text")
+const bot = document.getElementById("bot")
 const a = new Audio("site/wav/1.wav")
 const b = new Audio("site/wav/2.wav")
 const c = new Audio("site/wav/3.wav")
@@ -9,42 +10,43 @@ const g = new Audio("site/wav/7.wav")
 const h = new Audio("site/wav/8.wav")
 const i = new Audio("site/wav/9.wav")
 
-
-
 function ohYes() {
-    let words = tweet();
+    text.innerHTML = ""
+    bot.setAttribute("src", "site/imgs/talk.gif")
+    let str = tweet();
+    console.log(str)
+    str = str.toUpperCase()
+    let words = str.split(" ")
     console.log(words)
-    var typewriter = new Typewriter(app, {
-        loop: false,
-        delay: 60,
-        cursor: "",
-    });
-    type(words, typewriter)
-    metta(words.length)
-
+    metta(words)
 }
 
-function type(words, typewriter) {
-    typewriter
-        .typeString(words)
-        .start()
-}
-
-function metta(length) {
+function metta(words) {
     let i = 0
     let x = 0
-    let z = length
+    let z = words.length
     speak(i, z)
     function speak() {
-        let audio = soundPicker(x)
-        audio.play()
+        let word = words[x]
+        if (word === ".") {
+            let audio = d
+            text.append(". ")
+            audio.play()
+        } else {
+            let audio = soundPicker(x)
+            text.append(word + " ")
+            audio.play()
+        }
         i++;
         x++;
         if (i < z) {
-            setTimeout(speak, 60);
+            setTimeout(speak, 100);
+        } else {
+            bot.setAttribute("src", "site/imgs/idle.gif")
         }
     }
 }
+
 
 function soundPicker() {
     let x = Math.floor(Math.random() * 9);
