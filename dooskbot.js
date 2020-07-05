@@ -9,16 +9,17 @@ require('dotenv').config()
 const makeTweet = require('./tweet')
 // The actual Twitter API
 const Twit = require('twit')
-
 // // That classic reply.js
 const reply = require('./reply')
+// clock
+const clock = require('./clock')
 // Express server info
 const express = require('express');
 var app = express();
 var PORT = process.env.PORT || 3000;
 // -----------------------------------------------------------------------
 // Twitter login credentials for Dooskbot; switch accounts with var beta
-let beta = false
+let beta = true
 var T = betaCheck()
 function betaCheck() {
     if (beta === true) {
@@ -60,5 +61,6 @@ function go() {
 app.listen(PORT, function () {
     setTimeout(go, 2000)
     setTimeout(reply.stream, 3000)
-    setInterval(go, 3600000)
+    setInterval(go, 3800000)
+    setInterval(clock.tickTock, 58000)
 })
