@@ -19,7 +19,7 @@ var app = express();
 var PORT = process.env.PORT || 3000;
 // -----------------------------------------------------------------------
 // Twitter login credentials for Dooskbot; switch accounts with var beta
-let beta = true
+let beta = false
 var T = betaCheck()
 function betaCheck() {
     if (beta === true) {
@@ -62,5 +62,5 @@ app.listen(PORT, function () {
     setTimeout(go, 2000)
     setTimeout(reply.stream, 3000)
     setInterval(go, 3800000)
-    setInterval(clock.tickTock, 58000)
+    // setInterval(clock.tickTock, 58000)
 })

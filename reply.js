@@ -3,7 +3,7 @@ const dictionary = require('./dictionary')
 const dooskbot = require('./dooskbot')
 const Twit = require('twit')
 
-let beta = true
+let beta = false
 var T = betaCheck()
 function betaCheck() {
     if (beta === true) {
@@ -77,7 +77,7 @@ function reply(tweet) {
             in_reply_to_status_id: nameID
         };
         sendReply(params)
-    } else if (happen > 4 && dooski === true) {
+    } else if (happen > 3 && dooski === true) {
         let reply = "@dnmckn " + dictionary.lemongrab()
         var params = {
             status: reply,

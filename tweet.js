@@ -5,7 +5,7 @@ const dictionary = require('./dictionary')
 function tweet() {
     // generates a random number between 0 and 22 to pick one 
     // of the 23 tweet formats
-    let t = 21
+    let t = zp(23)
 
     //shiny check; generates a number between 0 annd 69; if shiny = 69
     //and t = 4, dooskbot returns a shiny tweet!

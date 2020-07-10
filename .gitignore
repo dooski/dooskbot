@@ -2,6 +2,7 @@ beta/
 node_modules/
 key.js
 check.js
+clock.js
 buffalo69bot/
 .gitignore
 .env
