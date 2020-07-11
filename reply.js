@@ -38,7 +38,7 @@ function stream() {
             throw err
         }
         // listens for mentions of dooskbot
-        var stream = T.stream('statuses/filter', { track: ['@dooskbeta'] });
+        var stream = T.stream('statuses/filter', { track: ['@dooskbot'] });
         stream.on('tweet', tweetEvent);
         console.log("listening... waiting .. . . ..")
         // when dooskbot is mentioned:

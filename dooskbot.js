@@ -55,8 +55,6 @@ function go() {
 // sets up stream to listen for replies; could be used to listen for other 
 // things in future
 
-
-
 // Timing for functional parts of DOOSKBOT, runs on server
 app.listen(PORT, function () {
     setTimeout(go, 2000)
