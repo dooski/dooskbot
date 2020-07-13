@@ -1,5 +1,6 @@
 //calls dictionary.js for all word objects
 const dictionary = require('./dictionary')
+
 //creates tweet to return to tweet.js
 //tweet generation function
 function tweet() {

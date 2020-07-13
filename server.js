@@ -1,27 +1,27 @@
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // -------------------- DOOSKBOT main script -----------------------------
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// API stuff -------------------------------------------------------------
+// server enviornment set up
 // dotenv for twitter keys
 require('dotenv').config()
-// That good good tweet.js
-const makeTweet = require('./tweet')
-// The actual Twitter API
-const Twit = require('twit')
-// // That classic reply.js
-const reply = require('./reply')
-// clock
-const clock = require('./clock')
 // Express server info
 const express = require('express');
 var app = express();
 var PORT = process.env.PORT || 3000;
-// -----------------------------------------------------------------------
-// Twitter login credentials for Dooskbot; switch accounts with var beta
-let beta = false
-var T = betaCheck()
-function betaCheck() {
+// mongoose info
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/dooskbot", {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useUnifiedTopology: true
+});
+// Twitter API
+const Twit = require('twit')
+
+// determines if tweeting from dooskbeta or not; change value in betaCheck()
+// must be done before requiring local modules 
+var T = betaCheck(true)
+function betaCheck(beta) {
     if (beta === true) {
         let T = new Twit({
             consumer_key: process.env.KEYBETA,
@@ -29,6 +29,7 @@ function betaCheck() {
             access_token: process.env.TOKENBETA,
             access_token_secret: process.env.TOKENBETA_SECRET
         })
+        console.log("DOOSKBETA IS IN THE HOUSE")
         return T
     } else {
         let T = new Twit({
@@ -37,10 +38,23 @@ function betaCheck() {
             access_token: process.env.TOKEN,
             access_token_secret: process.env.TOKEN_SECRET
         })
+        console.log("DOOSKBOT TIME")
         return T
     }
 }
-console.log(T)
+module.exports = T
+
+// local modules
+// tweet.js generates tweet content
+const makeTweet = require('./tweet')
+// clock.js is in beta; tweets at specific times of day
+const clock = require('./clock')
+// reply.js monitors for replies to dooskbot tweets
+const reply = require('./reply')
+// follow.js follows lmao
+const follow = require('./follow')
+// -----------------------------------------------------------------------
+
 // TWEETS ----------------------------------------------------------------
 // Makes and sends out a tweet
 function go() {
@@ -51,14 +65,13 @@ function go() {
     console.log(tweet)
 }
 
-// STREAMS ----------------------------------------------------------------
-// sets up stream to listen for replies; could be used to listen for other 
-// things in future
 
 // Timing for functional parts of DOOSKBOT, runs on server
 app.listen(PORT, function () {
     setTimeout(go, 2000)
     setTimeout(reply.stream, 3000)
+    setTimeout(follow.feed, 4000)
     setInterval(go, 3800000)
-    // setInterval(clock.tickTock, 58000)
+    setInterval(clock.tickTock, 58000)
 })
+

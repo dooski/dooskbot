@@ -1,29 +1,8 @@
 //calls dictionary.js for all word objects
 const dictionary = require('./dictionary')
-const dooskbot = require('./dooskbot')
-const Twit = require('twit')
+const server = require('./server')
 
-let beta = false
-var T = betaCheck()
-function betaCheck() {
-    if (beta === true) {
-        let T = new Twit({
-            consumer_key: process.env.KEYBETA,
-            consumer_secret: process.env.KEYBETA_SECRET,
-            access_token: process.env.TOKENBETA,
-            access_token_secret: process.env.TOKENBETA_SECRET
-        })
-        return T
-    } else {
-        let T = new Twit({
-            consumer_key: process.env.KEY,
-            consumer_secret: process.env.KEY_SECRET,
-            access_token: process.env.TOKEN,
-            access_token_secret: process.env.TOKEN_SECRET
-        })
-        return T
-    }
-}
+let T = server
 
 function stream() {
     T.get('account/verify_credentials', {
@@ -38,7 +17,7 @@ function stream() {
             throw err
         }
         // listens for mentions of dooskbot
-        var stream = T.stream('statuses/filter', { track: ['@dooskbot'] });
+        var stream = T.stream('statuses/filter', { track: ['@dooskbeta'] });
         stream.on('tweet', tweetEvent);
         console.log("listening... waiting .. . . ..")
         // when dooskbot is mentioned:
@@ -66,7 +45,7 @@ function reply(tweet) {
     let nothing = tweet.text.includes("this is nothing")
     let dooskbot = tweet.text.includes(" dooskbot")
     let you = tweet.text.includes(" you ")
-    let hillary = tweet.user.screen_name.includes("asst_to_hutch")
+    let hillary = tweet.user.screen_name.includes("hillarymc95")
     let dooski = tweet.user.screen_name.includes("dnmckn")
     let doosko = tweet.user.screen_name.includes("dooskbot")
     if (doosko === true) {
@@ -77,7 +56,7 @@ function reply(tweet) {
             in_reply_to_status_id: nameID
         };
         sendReply(params)
-    } else if (happen > 3 && dooski === true) {
+    } else if (happen > 6 && dooski === true) {
         let reply = "@dnmckn " + dictionary.lemongrab()
         var params = {
             status: reply,
@@ -166,7 +145,12 @@ function reply(tweet) {
             in_reply_to_status_id: nameID
         };
         sendReply(params)
-    } else { console.log("not replying") }
+    } else {
+        T.post('favorites/create', {
+            id: nameID
+        })
+        console.log("I liked it!")
+    }
 }
 
 function sendReply(params) {

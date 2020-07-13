@@ -2,9 +2,9 @@
   "name": "dooskbot",
   "version": "0.2.0",
   "description": "DOOSKBOT\r v 0.2\r Author: Dan McKeon",
-  "main": "dooskbot.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node dooskbot.js",
+    "start": "node server.js",
     "test": "node test.js",
     "check": "node check.js",
     "clock": "node clock.js"
@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "log4js": "^6.2.1",
     "moment": "^2.27.0",
+    "mongoose": "^5.9.23",
     "twit": "^2.2.11"
   },
   "devDependencies": {},

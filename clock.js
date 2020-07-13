@@ -26,7 +26,6 @@ function betaCheck() {
 
 function tickTock() {
     let now = moment().format('LT')
-    console.log(now)
     timeChecks(now)
 }
 
@@ -38,24 +37,41 @@ function timeChecks(now) {
         T.post('statuses/update', {
             status: tweet,
         })
-    } if (now === "7:45 AM") {
+    } if (now === "5:55 AM") {
         let ending = dictionary.ending()
-        let tweet = "i'm leaving my house like girlpool would at this time, historically speaking"
+        let tweet = "happy morning time now here we go " + ending
         T.post('statuses/update', {
             status: tweet,
         })
-    } if (now === "8:25 AM") {
-        let tweet = "now it's 8:25 am, assuming I am programmed correctly, so I'm gonna get a croissant and a cup of COFFEE and sip said coffee and harass dooskbot"
+    } if (now === "6:25 AM") {
+        let ending = dictionary.ending()
+        let tweet = "fell back asleep haha what a world " + ending
         T.post('statuses/update', {
             status: tweet
         })
-    } if (now === "8:37 AM") {
-        let tweet = "got my croissant! fuck you @dooskbot, get a fucking watch"
+    } if (now === "7:32 AM") {
+        let tweet = "gonna go get that croissant!"
         T.post('statuses/update', {
             status: tweet,
         })
-    } if (now === "8:57 AM") {
-        let tweet = "let's go to work!"
+    } if (now === "8:10 AM") {
+        let adj = dictionary.adjective()
+        let tweet = "got that " + adj + " croissant!"
+        T.post('statuses/update', {
+            status: tweet
+        })
+    } if (now === "8:13 AM") {
+        let tweet = "heading back home now, croissant in hand!"
+        T.post('statuses/update', {
+            status: tweet
+        })
+    } if (now === "8:52 AM") {
+        let tweet = "lmao i dont have hands omg"
+        T.post('statuses/update', {
+            status: tweet
+        })
+    } if (now === "9:15 AM") {
+        let tweet = "waka waka am i right @andrea_oaks haha dont bother replying bc im legally not allowed to see your tweets haha DRATS!!"
         T.post('statuses/update', {
             status: tweet
         })
