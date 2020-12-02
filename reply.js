@@ -50,7 +50,7 @@ function reply(tweet) {
     let doosko = tweet.user.screen_name.includes("dooskbot")
     if (doosko === true) {
         let ending = dictionary.endingForSure()
-        let reply = "eat butt, " + ending
+        let reply = "@dooskbot eat butt, " + ending
         var params = {
             status: reply,
             in_reply_to_status_id: nameID
@@ -82,9 +82,7 @@ function reply(tweet) {
         sendReply(params)
     }
     else if (question === true || who === true || how === true || when === true || why === true || what === true || should === true || should2 === true) {
-        let answers = ["yes", "sure", "it's fine", "shhh sh sh, no", "big if true", "i dont get it", "woah, dude, im married", "waka waka!", "maaaaybeeee", "well no", "haha nah", "maybe", "pizza? does that make sense?", "no", "not at all", "not even as a joke", "F", "yup", "sorry"]
-        let a = Math.floor(Math.random() * answers.length)
-        let answer = answers[a]
+        let answer = dictionary.answer()
         let reply = "@" + name + " " + answer
         var params = {
             status: reply,

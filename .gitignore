@@ -1,8 +1,7 @@
 beta/
 node_modules/
 key.js
+dooskord.json
 check.js
-clock.js
-buffalo69bot/
 .gitignore
 .env

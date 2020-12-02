@@ -589,6 +589,8 @@ var ings = [{ alt1: "rigging a primary", alt2: "rigging an election", alt3: "rig
 { alt1: "breaking up with me", alt2: "breaking up with Dan, who is single and their DMs are open", alt3: "breaking up monopolies" },
 { alt1: "trying to prove a point", alt2: "dying on this hill", alt3: "explaining that food shouldn't taste good" }]
 
+let answers = ["yes", "sure", "it's fine", "shhh sh sh, no", "big if true", "i dont get it", "woah, dude, im married", "waka waka!", "maaaaybeeee", "well no", "haha nah", "maybe", "pizza? does that make sense?", "no", "not at all", "not even as a joke", "F", "yup", "sorry"]
+
 // word picker functions
 //things
 function thingSingular() {
@@ -777,7 +779,11 @@ function verbGeneral() {
     let verb = verbsGeneral[a]
     return verb
 }
-
+function answer() {
+    let a = Math.floor(Math.random() * answers.length)
+    let answer = answers[a]
+    return answer
+}
 
 module.exports = {
     thingSingular,
@@ -814,5 +820,6 @@ module.exports = {
     verbsObject,
     verbsPerson,
     verbsGeneral,
-    ings
+    ings,
+    answer
 }

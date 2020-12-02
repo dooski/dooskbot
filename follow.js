@@ -46,7 +46,7 @@ function feed() {
     function hellYeah(tweet) {
         var nameID = tweet.id_str;
         let ending = dictionary.ending()
-        let reply = "@dooskbot shhhhhh, sh sh, no " + ending;
+        let reply = "@dooskbot well no, " + ending;
         var params = {
             status: reply,
             in_reply_to_status_id: nameID

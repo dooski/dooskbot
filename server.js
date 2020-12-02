@@ -57,21 +57,88 @@ const follow = require('./follow')
 
 // TWEETS ----------------------------------------------------------------
 // Makes and sends out a tweet
-function go() {
-    let tweet = makeTweet.tweet()
+async function go() {
+    const tweet = await makeTweet.tweet(null)
     T.post('statuses/update', {
         status: tweet
     })
     console.log(tweet)
 }
+function taunt() {
+    T.post('statuses/update', {
+        status: "gettttttttttttt DUNKED ON @twitter"
+    })
+}
 
 
 // Timing for functional parts of DOOSKBOT, runs on server
 app.listen(PORT, function () {
-    setTimeout(go, 2000)
     setTimeout(reply.stream, 3000)
     setTimeout(follow.feed, 4000)
     setInterval(go, 3800000)
+    taunt()
     setInterval(clock.tickTock, 58000)
 })
+
+// DOOSKORD ------------------------------------------------------------
+// discord.js to interact with Discord API
+const Discord = require('discord.js');
+// client connection
+const client = new Discord.Client();
+const request = require('request');
+// dooskord.json info
+// const info = require('./dooskord.json')
+// dictionary
+const dictionary = require('./dictionary.js')
+
+var beginnings = ["look, ", "hey sooo ", "hi, ", "oh, ", "YOOO "]
+
+client.once('ready', () => {
+    console.log('Ready!');
+    // client.channels.cache.get("732639737369853963").send(":)")
+
+});
+
+setTimeout(check, 10000)
+setInterval(check, 4140000)
+client.on('message', message => {
+    z = makeTweet.zp(5)
+    if (message.content.includes("?") === true) {
+        let answer = dictionary.answer()
+        message.channel.send(answer)
+    }
+    else if (message.author.username === "chippicus") {
+        message.channel.send("chip, my " + dictionary.personSingular() + ", " + makeTweet.talk(19) + "!")
+    } else if (message.author.username === "CrimockLyte") {
+        message.channel.send("chowdah!")
+    } else if (message.author.username === "hellotherelydia") {
+        if (z === 0) {
+            message.channel.send("more like squidia! " + dictionary.ending())
+        } else message.channel.send("so, " + makeTweet.talk(20))
+        // } else if (message.author.username === "dooski") {
+        //     message.channel.send(dictionary.lemongrab())
+    }
+    else if (message.author.username !== "Dooskbot") {
+        let beginning = beginnings[z]
+        message.channel.send(beginning + message.author.username + "! " + makeTweet.talk(20) + "!")
+    }
+})
+
+function check() {
+    request("https://api.openweathermap.org/data/2.5/weather?appid=09bbdc4243d49ba72f9cfcde4484f728&q=buttzville&units=imperial", { json: true }, (err, res, body) => {
+        if (err) { return console.log(err); }
+        console.log(body.main.temp);
+        if (body.main.temp >= 69 && body.main.temp < 70) {
+            client.channels.cache.get("732639737369853963").send("Heyoooo, it's 69 degrees in Buttzville, NJ!")
+            console.log("woot")
+        }
+        else {
+            console.log("womp")
+        }
+    });
+}
+
+
+//logs in with token
+client.login(process.env.DISC_TOKEN)
 
