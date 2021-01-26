@@ -20,7 +20,7 @@ const Twit = require('twit')
 
 // determines if tweeting from dooskbeta or not; change value in betaCheck()
 // must be done before requiring local modules 
-var T = betaCheck(true)
+var T = betaCheck(false)
 function betaCheck(beta) {
     if (beta === true) {
         let T = new Twit({
