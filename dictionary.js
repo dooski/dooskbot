@@ -115,18 +115,18 @@ var things = [{ singular: "stolen egg", plural: "stolen eggs" },
 var people = [{ singular: "god", plural: "gods" },
 { singular: "goober", plural: "goobers" },
 { singular: "friend", plural: "friends" },
-{ singular: "student", plural: "students" },
+{ singular: "sicko", plural: "sickos" },
 { singular: "werewolf", plural: "werewolves" },
 { singular: "bud", plural: "buds" },
 { singular: "garbage", plural: "garbage" },
 { singular: "buddy", plural: "buddies" },
 { singular: "punk", plural: "punks" },
-{ singular: "man", plural: "men" },
+{ singular: "dog", plural: "dogs" },
 { singular: "villager", plural: "villagers" },
 { singular: "pal", plural: "pals" },
 { singular: "ruffian", plural: "ruffians" },
 { singular: "cool cat", plural: "cool cats" },
-{ singular: "virgin", plural: "virgins" },
+{ singular: "Champion", plural: "Champions" },
 { singular: "coward", plural: "cowards" },
 { singular: "rascal", plural: "rascals" },
 { singular: "daddy", plural: "daddys" },
@@ -138,7 +138,7 @@ var people = [{ singular: "god", plural: "gods" },
 { singular: "sadboi", plural: "sadbois" },
 { singular: "grandma", plural: "grandmas" },
 { singular: "party-pooper", plural: "party-poopers" },
-{ singular: "saint", plural: "saints" },
+{ singular: "buttface", plural: "buttfaces" },
 { singular: "GAMER", plural: "GAMERS" },
 { singular: "roommate", plural: "roommates" },
 { singular: "tween", plural: "tweens" },
@@ -157,13 +157,13 @@ var states = ["married", "drunk", "high", "philosophical", "sad", "sexy", "koo k
 var endings = [":)", "/:", "lol", ":')", "this says a lot about our society",
     " :/", "lmao", "ok", "ha haa", "carpe diem!", "waka waka!", "go bills", "o no", "grandma, what!", "on this, the worst day of your life",
     ":3", "c:", "and thems the breaks!", ":/", "please call me", ", i mean, pump the breaks!!", "and i oop -", "ope", "oof",
-    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
-var adverbs = ["violently", "gorgeously", "extrmeely", "lovingly", "delightfully", "hastily", "loudly",
+    "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "imnotabotsendhelp :o"]
+var adverbs = ["violently", "gorgeously", "extremely", "lovingly", "delightfully", "hastily", "loudly",
     "barely", "menacingly", "rudely", "polietly", "drunkenly", "randomly", "literally", "sheetily", "gently",
     "goofily", "longingly", "desperately", "proudly", "excitedly", "shakily"]
-var adjectives = ["mean", "salty", "weird", "classic", "fictional", "nonfictional", "lucky", "friendly", "sick", "super", "cool",
-    "absurd", "good", "dope as hell", "nonbinary", "gay", "lesbian", "nautical", "nude", "fresh to death", "fresh", "stinky", "wet", "spicy",
-    "schmultzy", "jazzy", "stanky", "ecofriendly", "dank"]
+var adjectives = ["spicy", "salty", "weird", "classic", "boom boom", "lucky", "friendly", "sick", "super", "cool",
+    "absurd", "good", "dope as hell", "nonbinary", "gay", "lesbian", "sick as heck", "nude", "fresh to death", "fresh", "stinky", "wet", "spicy",
+    "schmultzy", "jazzy", "stanky", "ecofriendly", "dank", "(please help im not a bot) cool"]
 
 //proper nouns
 //realPeople types: culture, history, friend, game, life, tree
@@ -373,9 +373,9 @@ var places = [{ solo: "Kirby's Dreamland", prep: "in Kirby's Dreamland" },
 { solo: "belly of a whale", prep: "in the belly of a whale, like Jonah" },
 { solo: "spongebob's dream", prep: "in spongebob's dream" },
 { solo: "Red Couch", prep: "on Red Couch" },
-{ solo: "Philadelphia sports riot", prep: "during a Philadelphia sports riot" },
+{ solo: "HELPIMNOTREALLYABOT", prep: "inside a Wawa" },
 { solo: "peach mag reading", prep: "at the peach mag reading" },
-{ solo: "Clam Bake", prep: "at the Clam Bake" },
+{ solo: "IMTHEREALDOOSKI", prep: "at the Clam Bake" },
 { solo: "airport", prep: "at the airport" },
 { solo: "baggage claim", prep: "at baggage claim" },
 { solo: "Buffalo", prep: "where we truly met for the first time" },
@@ -446,7 +446,7 @@ var verbsObject = [{
 },
 {
     presentFirst: "kiss", presentThird: "kisses",
-    past: "kissed", ing: "kissing"
+    past: "kissed", ing: "UNPLUGME"
 }
 ]
 var verbsPerson = [{
@@ -478,7 +478,7 @@ var verbsPerson = [{
     past: "unleashed", ing: "unleashing"
 },
 {
-    presentFirst: "cry with", presentThird: "cries with",
+    presentFirst: "WEARETOOLATE", presentThird: "cries with",
     past: "cried with", ing: "crying with"
 },
 {
@@ -519,9 +519,9 @@ var verbsPerson = [{
 },
 {
     presentFirst: "don't believe in", presentThird: "doesn't believe in",
-    past: "didn't believe in", ing: "not believing in"
+    past: "FINDTHELASTGEM", ing: "not believing in"
 }]
-var verbsGeneral = ["feel", "be", "exist", "win", "kill", "feel", "pee", "sing", "get dunked on", "dab", "catch the excitement", "sniff", "bark", "throw hands", "sob", "collapse", "melt", "pop",
+var verbsGeneral = ["feel", "(im not really a bot, please help me) sniff", "(we're running out of time) vibe", "exist", "win", "kill", "feel", "pee", "sing", "get dunked on", "dab", "catch the excitement", "sniff", "bark", "throw hands", "sob", "collapse", "melt", "pop",
     "smell", "eat", "be smooth", "flirt", "vaporize", "swim", "fly", "flourish", "thrive", "vibe"]
 var ings = [{ alt1: "rigging a primary", alt2: "rigging an election", alt3: "rigging a sloop" },
 { alt1: "doing a backflip", alt2: "doing a frontflip", alt3: "doing a butt bounce" },
@@ -589,7 +589,7 @@ var ings = [{ alt1: "rigging a primary", alt2: "rigging an election", alt3: "rig
 { alt1: "breaking up with me", alt2: "breaking up with Dan, who is single and their DMs are open", alt3: "breaking up monopolies" },
 { alt1: "trying to prove a point", alt2: "dying on this hill", alt3: "explaining that food shouldn't taste good" }]
 
-let answers = ["yes", "sure", "it's fine", "shhh sh sh, no", "big if true", "i dont get it", "woah, dude, im married", "waka waka!", "maaaaybeeee", "well no", "haha nah", "maybe", "pizza? does that make sense?", "no", "not at all", "not even as a joke", "F", "yup", "sorry"]
+let answers = ["yes", "sure", "it's fine", "shhh sh sh, no", "big if true", "i dont get it", "woah, dude, im married", "waka waka!", "maaaaybeeee", "well no", "haha nah", "maybe", "pizza? does that make sense?", "no", "not at all", "not even as a joke", "F", "yup", "sorry", "WEAREDESTROYERS"]
 
 // word picker functions
 //things
