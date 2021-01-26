@@ -66,7 +66,7 @@ async function go() {
 }
 function taunt() {
     T.post('statuses/update', {
-        status: "gettttttttttttt DUNKED ON @twitter"
+        status: "imnotreallyabotyouvegottohelpme and i oop-"
     })
 }
 
